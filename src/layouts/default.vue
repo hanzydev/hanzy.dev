@@ -3,7 +3,7 @@
     <audio src="/alber-egg.mp3" id="alber-audio" class="hidden" loop />
 
     <ScrollAnimation>
-        <img
+        <NuxtImg
             src="/gradient-top.png"
             alt="gradient top"
             class="fixed -z-[1]"
@@ -13,7 +13,7 @@
     </ScrollAnimation>
 
     <ScrollAnimation>
-        <img
+        <NuxtImg
             src="/gradient-bottom.png"
             alt="gradient bottom"
             class="fixed bottom-0 -z-[1]"

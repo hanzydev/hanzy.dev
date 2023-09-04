@@ -11,15 +11,14 @@
     },
     "devDependencies": {
         "@iconify/vue": "^4.1.1",
-        "@nuxt/devtools": "latest",
+        "@nuxt/devtools": "^0.8.2",
+        "@nuxt/image": "^1.0.0-rc.1",
         "@nuxtjs/google-fonts": "^3.0.2",
         "@nuxtjs/tailwindcss": "^6.8.0",
         "@pinia/nuxt": "^0.4.11",
         "gsap": "^3.12.2",
+        "nuxt": "3.6.5",
         "nuxt-lodash": "^2.5.0",
         "prettier": "^3.0.3"
-    },
-    "dependencies": {
-        "nuxt": "3.6.5"
     }
 }

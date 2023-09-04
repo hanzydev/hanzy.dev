@@ -12,12 +12,13 @@
                         id="avatar"
                         :href="`https://discord.com/users/${store.data!.discord_user.id}`"
                     >
-                        <img
+                        <NuxtImg
                             draggable="false"
                             class="w-full h-full rounded-full"
                             id="avatar-img"
                             width="250"
                             height="250"
+                            ref="avatarRef"
                             :src="
                                 resolveAvatarURL(
                                     store.data!.discord_user.id,
@@ -26,7 +27,6 @@
                             "
                             :alt="`${store.data!.discord_user.username}'s avatar`"
                             @load="showStatus = true"
-                            ref="avatarRef"
                         />
 
                         <div
