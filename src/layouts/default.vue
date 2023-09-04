@@ -1,5 +1,5 @@
 <template>
-    <audio src="/nix_egg.mp3" id="nix-audio" class="hidden" loop />
+    <audio src="/nix-egg.mp3" id="nix-audio" class="hidden" loop />
 
     <ScrollAnimation>
         <img src="/gradient-top.png" class="fixed -z-[1]" id="gradient-top" draggable="false" />
