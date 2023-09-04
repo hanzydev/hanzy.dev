@@ -1,5 +1,6 @@
 <template>
     <audio src="/nix-egg.mp3" id="nix-audio" class="hidden" loop />
+    <audio src="/alber-egg.mp3" id="alber-audio" class="hidden" loop />
 
     <ScrollAnimation>
         <img src="/gradient-top.png" class="fixed -z-[1]" id="gradient-top" draggable="false" />
@@ -101,6 +102,27 @@ const onKeyUp = (event: KeyboardEvent) => {
             toggledEgg.tweens.forEach((tween) => tween.kill());
             gsap.to(gradientTop, { rotate: 0, duration: 1, ease: 'power2.inOut' });
             gsap.to(gradientBottom, { rotate: 0, duration: 1, ease: 'power2.inOut' });
+        }
+
+        latestString = '';
+        toggledEgg = { name: '', tweens: [] };
+    }
+
+    // alber egg
+    if (latestString === 'pedofili' && toggledEgg.name !== 'pedofili') {
+        const alberAudio = document.getElementById('alber-audio') as HTMLAudioElement;
+
+        if (alberAudio) {
+            alberAudio.play();
+        }
+
+        latestString = '';
+        toggledEgg.name = 'pedofili';
+    } else if (latestString === 'pedofili' && toggledEgg.name === 'pedofili') {
+        const alberAudio = document.getElementById('alber-audio') as HTMLAudioElement;
+
+        if (alberAudio) {
+            alberAudio.pause();
         }
 
         latestString = '';
