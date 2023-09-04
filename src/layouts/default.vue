@@ -3,12 +3,19 @@
     <audio src="/alber-egg.mp3" id="alber-audio" class="hidden" loop />
 
     <ScrollAnimation>
-        <img src="/gradient-top.png" class="fixed -z-[1]" id="gradient-top" draggable="false" />
+        <img
+            src="/gradient-top.png"
+            alt="gradient top"
+            class="fixed -z-[1]"
+            id="gradient-top"
+            draggable="false"
+        />
     </ScrollAnimation>
 
     <ScrollAnimation>
         <img
             src="/gradient-bottom.png"
+            alt="gradient bottom"
             class="fixed bottom-0 -z-[1]"
             id="gradient-bottom"
             draggable="false"
