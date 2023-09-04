@@ -1,0 +1,22 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+    @apply text-white bg-black overflow-x-hidden font-inter;
+}
+
+.link {
+    @apply relative;
+}
+
+.link::before {
+    content: '';
+    transform: scaleX(0);
+    background: repeating-linear-gradient(to right, #3b82f6 0%, #ec4899 50%, #a855f7 100%);
+    @apply origin-center left-0 bottom-0 rounded absolute w-full h-[2px] transition-transform duration-300 ease-in-out;
+}
+
+.link:hover::before {
+    transform: scaleX(1);
+}

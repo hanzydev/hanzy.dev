@@ -1,0 +1,22 @@
+[
+    {
+        "name": "home",
+        "icon": "fluent:home-24-filled",
+        "to": "/"
+    },
+    {
+        "name": "skills",
+        "icon": "ic:round-scoreboard",
+        "to": "/skills"
+    },
+    {
+        "name": "projects",
+        "icon": "heroicons-solid:terminal",
+        "to": "/projects"
+    },
+    {
+        "name": "contact",
+        "icon": "fluent:mail-24-filled",
+        "to": "/contact"
+    }
+]

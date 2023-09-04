@@ -1,0 +1,26 @@
+[
+    {
+        "name": "Github",
+        "icon": "fa:github",
+        "href": "https://github.com/hanzydev",
+        "alt": "@hanzydev"
+    },
+    {
+        "name": "Instagram",
+        "icon": "fa:instagram",
+        "href": "https://www.instagram.com/hanzydev",
+        "alt": "@hanzydev"
+    },
+    {
+        "name": "Discord",
+        "icon": "fa-brands:discord",
+        "href": "https://discord.com/users/1093131781043126322",
+        "alt": "@hanzydev"
+    },
+    {
+        "name": "E-Mail",
+        "icon": "fluent:mail-24-filled",
+        "href": "mailto:contact@hanzy.dev",
+        "alt": "contact@hanzy.dev"
+    }
+]
