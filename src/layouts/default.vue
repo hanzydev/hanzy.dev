@@ -1,5 +1,5 @@
 <template>
-    <audio src="/disco.mp3" id="disco-audio" class="hidden" loop />
+    <audio src="/nix_egg.mp3" id="nix-audio" class="hidden" loop />
 
     <ScrollAnimation>
         <img src="/gradient-top.png" class="fixed -z-[1]" id="gradient-top" draggable="false" />
@@ -43,24 +43,20 @@ const onKeyUp = (event: KeyboardEvent) => {
     if (latestString === 'nix' && toggledEgg.name !== 'nix') {
         const gradientTop = document.getElementById('gradient-top') as HTMLImageElement;
         const gradientBottom = document.getElementById('gradient-bottom') as HTMLImageElement;
-        const license = document.getElementById('license-link') as HTMLLinkElement;
-        const nixLicense = document.getElementById('nix-license-link') as HTMLLinkElement;
-        const discoAudio = document.getElementById('disco-audio') as HTMLAudioElement;
-        const author = document.getElementById('author') as HTMLSpanElement;
-        const authorNix = document.getElementById('author-nix') as HTMLSpanElement;
+        const nixAudio = document.getElementById('nix-audio') as HTMLAudioElement;
+        const hanzys = document.getElementsByClassName('hanzy') as HTMLCollectionOf<HTMLElement>;
+        const nixs = document.getElementsByClassName('nix') as HTMLCollectionOf<HTMLElement>;
 
-        if (discoAudio) {
-            discoAudio.play();
+        for (const hanzy of hanzys) {
+            hanzy.classList.add('hidden');
         }
 
-        if (license && nixLicense) {
-            license.classList.add('hidden');
-            nixLicense.classList.remove('hidden');
+        for (const nix of nixs) {
+            nix.classList.remove('hidden');
         }
 
-        if (author && authorNix) {
-            author.classList.add('hidden');
-            authorNix.classList.remove('hidden');
+        if (nixAudio) {
+            nixAudio.play();
         }
 
         if (gradientTop && gradientBottom) {
@@ -85,24 +81,20 @@ const onKeyUp = (event: KeyboardEvent) => {
     } else if (latestString === 'nix' && toggledEgg.name === 'nix') {
         const gradientTop = document.getElementById('gradient-top') as HTMLImageElement;
         const gradientBottom = document.getElementById('gradient-bottom') as HTMLImageElement;
-        const license = document.getElementById('license-link') as HTMLLinkElement;
-        const nixLicense = document.getElementById('nix-license-link') as HTMLLinkElement;
-        const discoAudio = document.getElementById('disco-audio') as HTMLAudioElement;
-        const author = document.getElementById('author') as HTMLSpanElement;
-        const authorNix = document.getElementById('author-nix') as HTMLSpanElement;
+        const nixAudio = document.getElementById('nix-audio') as HTMLAudioElement;
+        const hanzys = document.getElementsByClassName('hanzy') as HTMLCollectionOf<HTMLElement>;
+        const nixs = document.getElementsByClassName('nix') as HTMLCollectionOf<HTMLElement>;
 
-        if (discoAudio) {
-            discoAudio.pause();
+        for (const hanzy of hanzys) {
+            hanzy.classList.remove('hidden');
         }
 
-        if (license && nixLicense) {
-            license.classList.remove('hidden');
-            nixLicense.classList.add('hidden');
+        for (const nix of nixs) {
+            nix.classList.add('hidden');
         }
 
-        if (author && authorNix) {
-            author.classList.remove('hidden');
-            authorNix.classList.add('hidden');
+        if (nixAudio) {
+            nixAudio.pause();
         }
 
         if (gradientTop && gradientBottom) {

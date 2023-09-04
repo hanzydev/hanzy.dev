@@ -5,7 +5,8 @@
                 class="bg-[rgba(0,0,0,0.2)] backdrop-blur-md p-4 w-full rounded-xl justify-between flex h-14"
                 id="navbar"
             >
-                <p class="font-robotomono cursor-default font-semibold">hànzy</p>
+                <p class="font-robotomono cursor-default font-semibold hanzy">hànzy</p>
+                <p class="font-robotomono cursor-default font-semibold nix hidden">nix</p>
 
                 <button class="absolute right-3" v-if="isMobile" @click="toggleNavbar">
                     <Icon
