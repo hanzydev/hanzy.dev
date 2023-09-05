@@ -57,8 +57,6 @@ const isOpen = ref(false);
 const isMobile = ref(false);
 
 const openNavbar = async () => {
-    isOpen.value = true;
-
     await gsap.to('#navbar', {
         duration: 0.3,
         height: `${items.length * 5}rem`,
@@ -82,6 +80,8 @@ const openNavbar = async () => {
             stagger: 0.1,
         },
     );
+
+    isOpen.value = true;
 };
 
 const closeNavbar = async () => {
@@ -122,7 +122,7 @@ const onResize = () => {
 };
 
 router.beforeEach(async (_, __, next) => {
-    if (isMobile && isOpen) {
+    if (isMobile.value && isOpen.value) {
         await closeNavbar();
     }
 
