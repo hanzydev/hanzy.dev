@@ -98,7 +98,7 @@ useHead({
         },
         {
             name: 'keywords',
-            content: 'hànzy, hanzy, emirhan',
+            content: 'hànzy, hànzydev, hanzy, hanzydev, emirhan77, emirhan',
         },
         {
             property: 'og:description',
