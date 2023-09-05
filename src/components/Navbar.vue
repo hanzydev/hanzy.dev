@@ -27,7 +27,7 @@
                     </NuxtLink>
                 </div>
                 <div
-                    class="flex-col justify-center w-full space-y-4 px-4 roubded-b-xl z-50 absolute top-16 left-0 hidden"
+                    class="flex-col justify-center w-full space-y-4 px-4 z-50 absolute top-16 left-0 hidden"
                     id="mobile-nav"
                     v-else
                 >
