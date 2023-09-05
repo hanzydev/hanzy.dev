@@ -12,7 +12,7 @@
                         id="avatar"
                         :href="`https://discord.com/users/${store.data!.discord_user.id}`"
                     >
-                        <NuxtImg
+                        <img
                             draggable="false"
                             class="w-full h-full rounded-full"
                             id="avatar-img"
