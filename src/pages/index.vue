@@ -14,7 +14,7 @@
                     >
                         <img
                             draggable="false"
-                            class="w-full h-full rounded-full"
+                            class="w-full h-full rounded-full hanzy"
                             id="avatar-img"
                             width="250"
                             height="250"
@@ -26,6 +26,16 @@
                                 )
                             "
                             :alt="`${store.data!.discord_user.username}'s avatar`"
+                            @load="showStatus = true"
+                        />
+                        <img
+                            draggable="false"
+                            class="w-full h-full rounded-full nix hidden"
+                            id="avatar-img"
+                            width="250"
+                            height="250"
+                            src="https://media.tenor.com/MvoPc38LiIIAAAAC/wawa-cat-wawa.gif"
+                            alt="nix"
                             @load="showStatus = true"
                         />
 
@@ -45,25 +55,35 @@
                 <div class="flex flex-col max-lg:items-center max-lg:text-center space-y-4 flex-1">
                     <ScrollAnimation transformY="top">
                         <div class="flex space-x-2">
-                            <h1 class="font-bold text-3xl sm:text-4xl">
+                            <h1 class="font-bold text-3xl sm:text-4xl hanzy">
                                 {{ store.data!.discord_user.username }}
                             </h1>
+                            <h1 class="font-bold text-3xl sm:text-4xl nix hidden">nix</h1>
                             <p
-                                class="font-robotomono mt-auto font-medium text-lg text-transparent bg-clip-text bg-gradient-to-r from-blue-500 via-pink-500 to-purple-500"
+                                class="hanzy font-robotomono mt-auto font-medium text-lg text-transparent bg-clip-text bg-gradient-to-r from-blue-500 via-pink-500 to-purple-500"
                             >
                                 <span class="font-bold text-2xl text-white">|</span>
                                 full-stack dev.
+                            </p>
+                            <p
+                                class="hidden nix font-robotomono mt-auto font-medium text-lg text-transparent bg-clip-text bg-gradient-to-r from-blue-500 via-pink-500 to-purple-500"
+                            >
+                                <span class="font-bold text-2xl text-white">|</span>
+                                system admin.
                             </p>
                         </div>
                     </ScrollAnimation>
 
                     <ScrollAnimation transformY="bottom">
-                        <p class="font-medium text-base sm:text-lg text-gray-300">
+                        <p class="font-medium text-base sm:text-lg text-gray-300 hanzy">
                             Hello! My name is <b>Emirhan</b>. I&apos;m a young developer living in
                             <b>Türkiye</b> and I got into the software industry about
                             <b>3.5</b> years ago. I&apos;m currently working on
                             <b>web development</b>. I&apos;m a full stack developer. If you want to
                             work with me feel free to contact me.
+                        </p>
+                        <p class="font-medium text-base sm:text-lg text-gray-300 nix hidden">
+                            selam ben kaan (nudesty adam)
                         </p>
                     </ScrollAnimation>
                 </div>
