@@ -8,9 +8,8 @@
                 rel="license"
                 href="http://creativecommons.org/licenses/by-nc-nd/4.0/"
                 target="_blank"
+                >CC BY-NC-ND 4.0</a
             >
-                CC BY-NC-ND 4.0
-            </a>
             license.
         </p>
     </div>
