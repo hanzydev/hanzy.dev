@@ -93,8 +93,7 @@ useHead({
     meta: [
         {
             name: 'description',
-            content:
-                'Hi! My name is Emirhan, I am a Full-Stack Developer and UI Designer. I live in Türkiye.',
+            content: 'Hello! My name is Emirhan. I am a Full-Stack Developer. I live in Türkiye.',
         },
         {
             name: 'keywords',
@@ -102,8 +101,7 @@ useHead({
         },
         {
             property: 'og:description',
-            content:
-                'Hi! My name is Emirhan, I am a Full-Stack Developer and UI Designer. I live in Türkiye.',
+            content: 'Hello! My name is Emirhan. I am a Full-Stack Developer. I live in Türkiye.',
         },
         {
             property: 'og:url',
