@@ -89,12 +89,13 @@ onMounted(() => {
 });
 
 useHead({
-    titleTemplate: (title) =>
-        title
-            ? title === 'Hànzy' || title.split(' ').length
+    titleTemplate: (title) => {
+        return title
+            ? title === 'Hànzy' || title.split(' ').length > 1
                 ? title
                 : `${title} - Hànzy`
-            : 'Hànzy',
+            : 'Hànzy';
+    },
     meta: [
         {
             name: 'keywords',
