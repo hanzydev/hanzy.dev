@@ -60,30 +60,33 @@ interface Blog {
     date: string;
 }
 
-const blogs = computed(
-    () =>
-        data.value?.map((blog) => {
-            const resolved = {
-                title: blog.title,
-                description: blog.description,
-                thumbnail: blog.thumbnail,
-                author: blog.author,
-                to: blog._path,
-                date: '',
-            };
+const blogs = computed(() => {
+    if (!Array.isArray(data.value)) {
+        return [];
+    }
 
-            const rawDate = blog.date;
+    return data.value.map((blog) => {
+        const resolved = {
+            title: blog.title,
+            description: blog.description,
+            thumbnail: blog.thumbnail,
+            author: blog.author,
+            to: blog._path,
+            date: '',
+        };
 
-            if (rawDate.includes('|')) {
-                const chunks = rawDate.split('|').map((c: string) => c.trim());
-                resolved.date = resolveDate(chunks[0], chunks[1]);
-            } else {
-                resolved.date = resolveDate(rawDate);
-            }
+        const rawDate = blog.date;
 
-            return resolved as Blog;
-        }),
-);
+        if (rawDate.includes('|')) {
+            const chunks = rawDate.split('|').map((c: string) => c.trim());
+            resolved.date = resolveDate(chunks[0], chunks[1]);
+        } else {
+            resolved.date = resolveDate(rawDate);
+        }
+
+        return resolved as Blog;
+    });
+});
 
 const router = useRouter();
 

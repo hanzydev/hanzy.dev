@@ -45,7 +45,7 @@ const date = computed(() => {
         const rawDate = data.value.date;
 
         if (!rawDate) {
-            return null;
+            return 'Unknown Date';
         }
 
         if (rawDate.includes('|')) {
@@ -56,7 +56,7 @@ const date = computed(() => {
         }
     }
 
-    return null;
+    return 'Unknown Date';
 });
 
 if (data.value) {
