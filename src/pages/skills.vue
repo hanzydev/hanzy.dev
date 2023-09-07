@@ -113,7 +113,7 @@ useHead({
     meta: [
         {
             property: 'og:title',
-            content: 'Skills | Hànzy',
+            content: 'Skills - Hànzy',
         },
         {
             name: 'description',

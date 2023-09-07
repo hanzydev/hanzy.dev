@@ -135,7 +135,7 @@ useHead({
     meta: [
         {
             property: 'og:title',
-            content: 'Blog | Hànzy',
+            content: 'Blog - Hànzy',
         },
         {
             name: 'description',

@@ -96,7 +96,7 @@ useHead({
     meta: [
         {
             property: 'og:title',
-            content: 'Home | Hànzy',
+            content: 'Home - Hànzy',
         },
         {
             name: 'description',

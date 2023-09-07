@@ -94,7 +94,7 @@ useHead({
     meta: [
         {
             property: 'og:title',
-            content: 'Contact | Hànzy',
+            content: 'Contact - Hànzy',
         },
     ],
 });
