@@ -18,5 +18,11 @@
         "name": "contact",
         "icon": "fluent:mail-24-filled",
         "to": "/contact"
+    },
+    {
+        "name": "blog",
+        "icon": "solar:document-bold",
+        "to": "/blog",
+        "className": "text-transparent bg-clip-text bg-gradient-to-r from-blue-500 via-pink-500 to-purple-500"
     }
 ]

@@ -115,6 +115,14 @@ useHead({
             property: 'og:title',
             content: 'Skills | Hànzy',
         },
+        {
+            name: 'description',
+            content: 'Here are my skills.',
+        },
+        {
+            property: 'og:description',
+            content: 'Here are my skills.',
+        },
     ],
 });
 </script>

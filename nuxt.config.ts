@@ -1,6 +1,12 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
-    modules: ['@nuxtjs/tailwindcss', '@pinia/nuxt', '@nuxtjs/google-fonts', 'nuxt-lodash'],
+    modules: [
+        '@nuxtjs/tailwindcss',
+        '@pinia/nuxt',
+        '@nuxtjs/google-fonts',
+        'nuxt-lodash',
+        '@nuxt/content',
+    ],
     srcDir: 'src',
     devtools: {
         enabled: true,
@@ -14,6 +20,11 @@ export default defineNuxtConfig({
     tailwindcss: {
         cssPath: '@/styles/main.css',
         configPath: 'tailwind.config.js',
+    },
+    content: {
+        highlight: {
+            theme: 'dracula',
+        },
     },
     vue: {
         propsDestructure: true,

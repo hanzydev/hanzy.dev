@@ -92,17 +92,10 @@ useHead({
     titleTemplate: (title) => (title ? (title === 'Hànzy' ? title : `${title} | Hànzy`) : 'Hànzy'),
     meta: [
         {
-            name: 'description',
-            content: 'Hello! My name is Emirhan. I am a Full-Stack Developer. I live in Türkiye.',
-        },
-        {
             name: 'keywords',
             content: 'hànzy, hànzydev, hanzy, hanzydev, emirhan77, emirhan',
         },
-        {
-            property: 'og:description',
-            content: 'Hello! My name is Emirhan. I am a Full-Stack Developer. I live in Türkiye.',
-        },
+
         {
             property: 'og:url',
             content: 'https://hanzy.dev',

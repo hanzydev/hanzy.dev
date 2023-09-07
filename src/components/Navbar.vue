@@ -19,7 +19,9 @@
                         v-for="(item, index) in items"
                         :to="item.to"
                         :key="index"
-                        class="transition-colors duration-300 cursor-pointer flex items-center space-x-1 link"
+                        :class="`transition-colors duration-300 cursor-pointer flex items-center space-x-1 link ${
+                            'className' in item ? item.className : ''
+                        }`"
                     >
                         <Icon :icon="item.icon" class="text-white w-4 h-4" />
                         <span>{{ item.name }}</span>
@@ -34,10 +36,12 @@
                         v-for="(item, index) in items"
                         :to="item.to"
                         :key="index"
-                        class="rounded-lg transition-colors hover:bg-[rgba(0,0,0,0.2)] py-3 px-4 w-full duration-300 cursor-pointer flex items-center space-x-2 link"
+                        class="rounded-lg transition-colors hover:bg-[rgba(0,0,0,0.2)] py-3 px-4 w-full duration-300 cursor-pointer flex items-center space-x-2 link before:origin-left"
                     >
                         <Icon :icon="item.icon" class="text-white w-6 h-6" />
-                        <span>{{ useUpperFirst(item.name) }}</span>
+                        <span :class="'className' in item ? item.className : ''">{{
+                            useUpperFirst(item.name)
+                        }}</span>
                     </NuxtLink>
                 </div>
             </Box>
@@ -140,10 +144,6 @@ onUnmounted(() => {
 </script>
 
 <style scoped>
-#mobile-nav > .link::before {
-    @apply origin-left;
-}
-
 .router-link-active::before {
     transform: scaleX(1);
 }

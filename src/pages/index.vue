@@ -98,6 +98,14 @@ useHead({
             property: 'og:title',
             content: 'Home | Hànzy',
         },
+        {
+            name: 'description',
+            content: 'Hello! My name is Emirhan. I am a Full-Stack Developer. I live in Türkiye.',
+        },
+        {
+            property: 'og:description',
+            content: 'Hello! My name is Emirhan. I am a Full-Stack Developer. I live in Türkiye.',
+        },
     ],
 });
 </script>

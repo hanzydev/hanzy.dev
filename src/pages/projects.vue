@@ -6,7 +6,7 @@
         </ScrollAnimation>
 
         <ScrollAnimation>
-            <div class="mt-6 grid xl:grid-cols-2 2xl:grid-cols-2 gap-6 w-full">
+            <div class="mt-6 grid xl:grid-cols-2 gap-6 w-full">
                 <RippleEffect
                     v-for="(project, index) in projects"
                     class="bg-[rgba(0,0,0,0.2)] backdrop-blur-md h-40 w-full rounded-xl cursor-pointer opacity-0"
@@ -126,6 +126,14 @@ useHead({
         {
             property: 'og:title',
             content: 'Projects | Hànzy',
+        },
+        {
+            name: 'description',
+            content: 'Here are my projects.',
+        },
+        {
+            property: 'og:description',
+            content: 'Here are my projects.',
         },
     ],
 });
