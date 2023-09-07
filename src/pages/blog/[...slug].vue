@@ -9,14 +9,16 @@
 
             <ScrollAnimation transformY="bottom" class="mt-6">
                 <ContentRenderer id="blog-content" :value="data!" />
-                <div class="flex justify-center mt-12">
+                <RippleEffect class="flex justify-center mt-12 rounded-2xl">
                     <NuxtLink
-                        class="py-3 px-5 rounded-2xl bg-[rgba(0,0,0,0.2)] backdrop-blur-md text-gray-300 hover:text-white hover:bg-[rgba(0,0,0,0.3)] transition-colors duration-300"
                         to="/blog"
+                        type="button"
+                        role="button"
+                        class="py-3 px-5 rounded-2xl bg-[rgba(0,0,0,0.2)] backdrop-blur-md text-gray-300 hover:text-white hover:bg-[rgba(0,0,0,0.3)] transition-colors duration-300"
                     >
                         View other posts
                     </NuxtLink>
-                </div>
+                </RippleEffect>
             </ScrollAnimation>
         </Container>
     </div>
