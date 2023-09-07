@@ -17,6 +17,10 @@ const pages = [
         path: '/contact',
         priority: 0.8,
     },
+    {
+        path: "/blog",
+        priority: 0.8,
+    }
 ];
 
 const BASE_SITEMAP = `<?xml version="1.0" encoding="UTF-8"?>
