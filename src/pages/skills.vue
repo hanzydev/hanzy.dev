@@ -37,6 +37,7 @@
             </div>
         </ScrollAnimation>
     </Container>
+    <div class="flex-grow" />
 </template>
 
 <script setup lang="ts">
