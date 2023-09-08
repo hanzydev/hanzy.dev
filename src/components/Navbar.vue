@@ -5,7 +5,7 @@
                 class="bg-[rgba(0,0,0,0.2)] backdrop-blur-md p-4 w-full rounded-xl justify-between flex h-14"
                 id="navbar"
             >
-                <p class="font-robotomono cursor-default font-semibold">hànzy</p>
+                <p class="cursor-default font-bold">hànzy</p>
 
                 <button class="absolute right-3" v-if="isMobile" @click="toggleNavbar">
                     <Icon
@@ -19,7 +19,7 @@
                         v-for="(item, index) in items"
                         :to="item.to"
                         :key="index"
-                        :class="`transition-colors duration-300 cursor-pointer flex items-center space-x-1 link ${
+                        :class="`transition-colors duration-300 cursor-pointer flex items-center space-x-1 link font-medium ${
                             'className' in item ? item.className : ''
                         }`"
                     >
@@ -36,7 +36,7 @@
                         v-for="(item, index) in items"
                         :to="item.to"
                         :key="index"
-                        class="rounded-lg transition-colors hover:bg-[rgba(0,0,0,0.2)] py-3 px-4 w-full duration-300 cursor-pointer flex items-center space-x-2 link before:origin-left"
+                        class="rounded-lg font-medium transition-colors hover:bg-[rgba(0,0,0,0.2)] py-3 px-4 w-full duration-300 cursor-pointer flex items-center space-x-2 link before:origin-left"
                     >
                         <Icon :icon="item.icon" class="text-white w-6 h-6" />
                         <span :class="'className' in item ? item.className : ''">{{
