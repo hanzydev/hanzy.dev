@@ -133,7 +133,7 @@ if (data.value) {
 
                             icons[0].classList.remove('hidden');
                             icons[1].classList.add('hidden');
-                        }, 1000);
+                        }, 2000);
                     },
                 },
                 [
