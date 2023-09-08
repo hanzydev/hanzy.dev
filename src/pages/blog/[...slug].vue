@@ -35,6 +35,8 @@
 </template>
 
 <script setup lang="ts">
+import { h, render } from 'vue';
+import { Icon } from '@iconify/vue';
 import { resolveDate } from '@/util/resolveDate';
 
 const route = useRoute();
@@ -84,6 +86,7 @@ if (data.value) {
     onMounted(() => {
         const links = document.querySelectorAll<HTMLLinkElement>('#blog-content a');
         const tables = document.querySelectorAll<HTMLTableElement>('#blog-content table');
+        const codes = document.querySelectorAll<HTMLElement>('#blog-content pre code');
 
         links.forEach((link) => {
             link.classList.add('link', 'before:origin-left');
@@ -100,6 +103,52 @@ if (data.value) {
 
             table.parentElement?.replaceChild(parentElement, table);
             parentElement.appendChild(table);
+        });
+
+        codes.forEach((code) => {
+            const pre = code.parentElement!;
+
+            pre.classList.add('relative', 'group');
+
+            const copyButtonVNode = h(
+                'button',
+                {
+                    class: 'absolute top-4 right-4 flex items-center justify-center text-center w-10 h-10 rounded-lg bg-[rgba(0,0,0,0.1)] backdrop-blur-md text-gray-300 hover:text-white opacity-0 group-hover:opacity-100 transition-all duration-300 text-sm',
+
+                    onClick: async () => {
+                        await navigator.clipboard.writeText(code.innerText);
+
+                        const btn = pre.querySelector('button')!;
+                        const icons = btn.querySelectorAll('svg');
+
+                        btn.classList.add('cursor-not-allowed');
+                        btn.disabled = true;
+
+                        icons[0].classList.add('hidden');
+                        icons[1].classList.remove('hidden');
+
+                        setTimeout(() => {
+                            btn.classList.remove('cursor-not-allowed');
+                            btn.disabled = false;
+
+                            icons[0].classList.remove('hidden');
+                            icons[1].classList.add('hidden');
+                        }, 1000);
+                    },
+                },
+                [
+                    h(Icon, {
+                        icon: 'lucide:clipboard',
+                        class: 'w-5 h-5',
+                    }),
+                    h(Icon, {
+                        icon: 'lucide:clipboard-check',
+                        class: 'w-5 h-5 hidden',
+                    }),
+                ],
+            );
+
+            render(copyButtonVNode, pre);
         });
     });
 } else {

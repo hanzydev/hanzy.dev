@@ -5,7 +5,7 @@
                 class="bg-[rgba(0,0,0,0.2)] backdrop-blur-md p-4 w-full rounded-xl justify-between flex h-14"
                 id="navbar"
             >
-                <p class="cursor-default font-bold">hànzy</p>
+                <h2 class="cursor-default font-bold">hànzy</h2>
 
                 <button class="absolute right-3" v-if="isMobile" @click="toggleNavbar">
                     <Icon
