@@ -32,7 +32,9 @@
                             <p class="font-robotomono font-medium">
                                 {{ link.name }}
                             </p>
-                            <p class="font-robotomono font-medium text-sm text-transparent bg-clip-text bg-gradient-to-r from-blue-500 via-pink-500 to-purple-500">
+                            <p
+                                class="font-robotomono font-medium text-sm text-transparent bg-clip-text bg-gradient-to-r from-blue-500 via-pink-500 to-purple-500"
+                            >
                                 {{ link.alt }}
                             </p>
                         </div>
@@ -96,6 +98,14 @@ useHead({
         {
             property: 'og:title',
             content: 'Contact - Hànzy',
+        },
+        {
+            name: 'description',
+            content: 'Contact me',
+        },
+        {
+            property: 'og:description',
+            content: 'Contact me',
         },
     ],
 });
