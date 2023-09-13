@@ -37,7 +37,7 @@ export default defineNuxtConfig({
             meta: [
                 {
                     name: 'author',
-                    content: 'Hànzy',
+                    content: 'Hanzy',
                 },
                 {
                     name: 'theme-color',

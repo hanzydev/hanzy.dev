@@ -1,21 +1,21 @@
 <template>
-    <ScrollAnimation>
+    <Animation>
         <img
             src="/gradient-top.png"
             alt="gradient top"
             class="fixed min-h-screen w-full -z-[1]"
             draggable="false"
         />
-    </ScrollAnimation>
+    </Animation>
 
-    <ScrollAnimation>
+    <Animation>
         <img
             src="/gradient-bottom.png"
             alt="gradient bottom"
             class="fixed min-h-screen w-full -z-[1]"
             draggable="false"
         />
-    </ScrollAnimation>
+    </Animation>
 
     <div class="flex flex-col min-h-screen w-full">
         <slot />

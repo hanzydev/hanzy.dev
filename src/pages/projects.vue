@@ -1,11 +1,11 @@
 <template>
     <div class="pt-36" />
     <Container>
-        <ScrollAnimation transformX="left">
+        <Animation transformX="left">
             <h1 class="font-robotomono font-bold text-4xl">/projects</h1>
-        </ScrollAnimation>
+        </Animation>
 
-        <ScrollAnimation>
+        <Animation>
             <div class="mt-6 grid xl:grid-cols-2 gap-6 w-full">
                 <RippleEffect
                     v-for="(project, index) in projects"
@@ -70,7 +70,7 @@
                     </a>
                 </RippleEffect>
             </div>
-        </ScrollAnimation>
+        </Animation>
     </Container>
     <div class="flex-grow" />
 </template>
@@ -126,7 +126,7 @@ useHead({
     meta: [
         {
             property: 'og:title',
-            content: 'Projects - Hànzy',
+            content: 'Projects - Hanzy',
         },
         {
             name: 'description',

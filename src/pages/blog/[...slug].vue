@@ -2,12 +2,12 @@
     <div v-if="data">
         <div class="pt-36" />
         <Container>
-            <ScrollAnimation transformX="left">
+            <Animation transformX="left">
                 <h1 class="font-robotomono font-bold text-4xl">{{ data.title }}</h1>
                 <p class="mt-3 text-gray-300">{{ data.description }} • {{ date }}</p>
-            </ScrollAnimation>
+            </Animation>
 
-            <ScrollAnimation transformY="bottom" class="mt-6">
+            <Animation transformY="bottom" class="mt-6">
                 <ContentRenderer id="blog-content" :value="data!" />
                 <RippleEffect class="flex justify-center mt-12 rounded-2xl">
                     <NuxtLink
@@ -19,7 +19,7 @@
                         View other posts
                     </NuxtLink>
                 </RippleEffect>
-            </ScrollAnimation>
+            </Animation>
         </Container>
     </div>
     <Error

@@ -1,5 +1,5 @@
 <template>
-    <ScrollAnimation class="absolute w-full z-50" transformY="top">
+    <Animation class="absolute w-full z-50" transformY="top">
         <Container>
             <Box
                 class="bg-[rgba(0,0,0,0.2)] backdrop-blur-md p-4 w-full rounded-xl justify-between flex h-14"
@@ -46,7 +46,7 @@
                 </div>
             </Box>
         </Container>
-    </ScrollAnimation>
+    </Animation>
 </template>
 
 <script setup lang="ts">

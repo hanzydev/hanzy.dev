@@ -91,10 +91,10 @@ onMounted(() => {
 useHead({
     titleTemplate: (title) => {
         return title
-            ? title === 'Hànzy' || title.split(' ').length > 1
+            ? title === 'Hanzy' || title.split(' ').length > 1
                 ? title
-                : `${title} - Hànzy`
-            : 'Hànzy';
+                : `${title} - Hanzy`
+            : 'Hanzy';
     },
     meta: [
         {

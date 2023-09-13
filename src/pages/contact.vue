@@ -1,15 +1,15 @@
 <template>
     <div class="pt-36" />
     <Container>
-        <ScrollAnimation transformX="left">
+        <Animation transformX="left">
             <h1 class="font-robotomono font-bold text-4xl">/contact</h1>
             <p class="mt-3 text-gray-300">
                 I'm currently open to new opportunities, if you have any questions or just want to
                 say hi, feel free to contact me.
             </p>
-        </ScrollAnimation>
+        </Animation>
 
-        <ScrollAnimation>
+        <Animation>
             <div class="mt-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 w-full">
                 <RippleEffect
                     v-for="(link, index) in links"
@@ -41,7 +41,7 @@
                     </a>
                 </RippleEffect>
             </div>
-        </ScrollAnimation>
+        </Animation>
     </Container>
     <div class="flex-grow" />
 </template>
@@ -97,7 +97,7 @@ useHead({
     meta: [
         {
             property: 'og:title',
-            content: 'Contact - Hànzy',
+            content: 'Contact - Hanzy',
         },
         {
             name: 'description',

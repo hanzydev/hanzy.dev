@@ -6,7 +6,6 @@
 
 <script setup lang="ts">
 import gsap from 'gsap';
-import ScrollTrigger from 'gsap/ScrollTrigger';
 
 const {
     fade = true,
@@ -22,9 +21,7 @@ const {
 
 const elementRef = ref<HTMLElement>();
 
-onMounted(async () => {
-    gsap.registerPlugin(ScrollTrigger);
-
+onMounted(() => {
     if (fade) {
         gsap.fromTo(
             elementRef.value!,
@@ -33,12 +30,6 @@ onMounted(async () => {
                 opacity: 1,
                 duration,
                 ease: 'power4.inOut',
-                scrollTrigger: {
-                    trigger: elementRef.value!,
-                    start: 'top 80%',
-                    end: 'bottom 80%',
-                    toggleActions: 'play none none reverse',
-                },
             },
         );
     }
@@ -51,12 +42,6 @@ onMounted(async () => {
                 x: 0,
                 duration,
                 ease: 'power4.inOut',
-                scrollTrigger: {
-                    trigger: elementRef.value!,
-                    start: 'top 80%',
-                    end: 'bottom 80%',
-                    toggleActions: 'play none none reverse',
-                },
             },
         );
     } else if (transformY) {
@@ -67,12 +52,6 @@ onMounted(async () => {
                 y: 0,
                 duration,
                 ease: 'power4.inOut',
-                scrollTrigger: {
-                    trigger: elementRef.value!,
-                    start: 'top 80%',
-                    end: 'bottom 80%',
-                    toggleActions: 'play none none reverse',
-                },
             },
         );
     }

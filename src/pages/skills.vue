@@ -1,11 +1,11 @@
 <template>
     <div class="pt-36" />
     <Container>
-        <ScrollAnimation transformX="left">
+        <Animation transformX="left">
             <h1 class="font-robotomono font-bold text-4xl">/skills</h1>
-        </ScrollAnimation>
+        </Animation>
 
-        <ScrollAnimation>
+        <Animation>
             <div
                 class="mt-6 grid grid-cols-2 xs:grid-cols-3 sm:grid-cols-4 lg:grid-cols-5 2xl:grid-cols-6 gap-6 w-full"
             >
@@ -35,7 +35,7 @@
                     </a>
                 </RippleEffect>
             </div>
-        </ScrollAnimation>
+        </Animation>
     </Container>
     <div class="flex-grow" />
 </template>
@@ -114,7 +114,7 @@ useHead({
     meta: [
         {
             property: 'og:title',
-            content: 'Skills - Hànzy',
+            content: 'Skills - Hanzy',
         },
         {
             name: 'description',

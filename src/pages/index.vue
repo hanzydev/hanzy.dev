@@ -5,7 +5,7 @@
             <div
                 class="flex max-lg:flex-col max-lg:justify-center items-center max-lg:space-y-6 lg:space-x-12"
             >
-                <ScrollAnimation transformX="left">
+                <Animation transformX="left">
                     <a
                         target="_blank"
                         class="relative flex items-center justify-center w-[250px]"
@@ -40,9 +40,9 @@
                             ></div>
                         </div>
                     </a>
-                </ScrollAnimation>
+                </Animation>
                 <div class="flex flex-col max-lg:items-center max-lg:text-center space-y-4 flex-1">
-                    <ScrollAnimation transformY="top">
+                    <Animation transformY="top">
                         <div class="flex space-x-2">
                             <h1 class="font-bold text-3xl sm:text-4xl">
                                 {{ store.data!.discord_user.username }}
@@ -54,17 +54,17 @@
                                 full-stack dev.
                             </p>
                         </div>
-                    </ScrollAnimation>
+                    </Animation>
 
-                    <ScrollAnimation transformY="bottom">
+                    <Animation transformY="bottom">
                         <p class="font-medium text-base sm:text-lg text-gray-300">
-                            Hello! My name is <b>Emirhan</b>. I&apos;m a young developer living in
+                            Hello! My name is <b>Emirhan</b>, aka <b>Hànzy</b>. I&apos;m a young developer living in
                             <b>Türkiye</b> and I got into the software industry about
                             <b>3.5</b> years ago. I&apos;m currently working on
                             <b>web development</b>. I&apos;m a full stack developer. If you want to
                             work with me feel free to contact me.
                         </p>
-                    </ScrollAnimation>
+                    </Animation>
                 </div>
             </div>
         </Container>
@@ -96,7 +96,7 @@ useHead({
     meta: [
         {
             property: 'og:title',
-            content: 'Home - Hànzy',
+            content: 'Home - Hanzy',
         },
         {
             name: 'description',
