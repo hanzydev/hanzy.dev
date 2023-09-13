@@ -26,8 +26,6 @@
 </template>
 
 <script setup lang="ts">
-import { Icon } from '@iconify/vue';
-
 const {
     button = {
         text: 'Go back to home',

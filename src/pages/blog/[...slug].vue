@@ -9,7 +9,7 @@
 
             <Animation transformY="bottom" class="mt-6">
                 <ContentRenderer id="blog-content" :value="data!" />
-                <RippleEffect class="flex justify-center mt-12 rounded-2xl">
+                <div class="flex justify-center mt-12">
                     <NuxtLink
                         to="/blog"
                         type="button"
@@ -18,7 +18,7 @@
                     >
                         View other posts
                     </NuxtLink>
-                </RippleEffect>
+                </div>
             </Animation>
         </Container>
     </div>
