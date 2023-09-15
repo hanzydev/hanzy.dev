@@ -109,7 +109,7 @@ const onLeave = (blogTitle: string) => {
 };
 
 const onClick = async (blogPath: string) => {
-    await wait(300);
+    await wait(250);
     router.push(blogPath);
 };
 

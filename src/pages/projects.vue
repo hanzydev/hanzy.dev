@@ -99,7 +99,7 @@ const onLeave = (projectName: string) => {
 };
 
 const onClick = async (href: string) => {
-    await wait(300);
+    await wait(250);
     window.open(href, '_blank');
 };
 

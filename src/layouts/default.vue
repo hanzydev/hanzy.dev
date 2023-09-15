@@ -26,7 +26,9 @@
 
     <div class="flex flex-col min-h-screen w-full" v-else>
         <slot />
-        <Footer />
+        <Animation>
+            <Footer />
+        </Animation>
     </div>
 </template>
 

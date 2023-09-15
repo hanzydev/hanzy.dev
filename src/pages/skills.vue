@@ -87,7 +87,7 @@ const onLeave = (skillName: string) => {
 };
 
 const onClick = async (href: string) => {
-    await wait(300);
+    await wait(250);
     window.open(href, '_blank');
 };
 

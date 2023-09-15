@@ -30,7 +30,7 @@ const onClick = (event: MouseEvent) => {
 <style>
 .ripple {
     transform: scale(0);
-    animation: ripple 600ms linear;
+    animation: ripple 450ms linear;
     @apply absolute rounded-full bg-[rgba(255,255,255,0.15)];
 }
 
