@@ -82,4 +82,13 @@ watch(selimBey, (value) => {
         });
     }
 });
+
+useHead({
+    htmlAttrs: {
+        class: 'scroll-smooth',
+    },
+    bodyAttrs: {
+        class: 'text-white bg-black overflow-x-hidden font-inter',
+    },
+});
 </script>

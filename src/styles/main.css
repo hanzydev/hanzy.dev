@@ -2,12 +2,8 @@
 @tailwind components;
 @tailwind utilities;
 
-html {
-    @apply scroll-smooth;
-}
-
-body {
-    @apply text-white bg-black overflow-x-hidden font-inter;
+:root {
+    color-scheme: dark;
 }
 
 .link {
