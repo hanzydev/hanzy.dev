@@ -29,7 +29,7 @@ onMounted(() => {
             {
                 opacity: 1,
                 duration,
-                ease: 'power4.inOut',
+                ease: 'expo.inOut',
             },
         );
     }
@@ -41,7 +41,7 @@ onMounted(() => {
             {
                 x: 0,
                 duration,
-                ease: 'power4.inOut',
+                ease: 'expo.inOut',
             },
         );
     } else if (transformY) {
@@ -51,7 +51,7 @@ onMounted(() => {
             {
                 y: 0,
                 duration,
-                ease: 'power4.inOut',
+                ease: 'expo.inOut',
             },
         );
     }
