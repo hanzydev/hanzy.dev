@@ -7,7 +7,12 @@
             >
                 <h2 class="cursor-default font-bold">hànzy</h2>
 
-                <button class="absolute right-3" v-if="isMobile" @click="toggleNavbar">
+                <button
+                    class="absolute right-3"
+                    aria-label="Toggle navbar"
+                    v-if="isMobile"
+                    @click="toggleNavbar"
+                >
                     <Icon
                         :icon="isOpen ? 'tabler:x' : 'tabler:menu-2'"
                         class="text-white w-6 h-6"
