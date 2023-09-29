@@ -80,6 +80,14 @@ if (data.value) {
                 property: 'og:description',
                 content: data.value.description,
             },
+            {
+                property: "og:image",
+                content: data.value.thumbnail,
+            },
+            {
+                property: "twitter:card",
+                content: "summary_large_image",
+            },
         ],
     });
 
