@@ -30,6 +30,11 @@
         "href": "https://docs.microsoft.com/en-us/dotnet/csharp/"
     },
     {
+        "name": "Python",
+        "icon": "logos:python",
+        "href": "https://www.python.org/"
+    },
+    {
         "name": "Vue",
         "icon": "logos:vue",
         "href": "https://vuejs.org/"
