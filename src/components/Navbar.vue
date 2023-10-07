@@ -81,7 +81,6 @@
 <script setup lang="ts">
 import gsap from 'gsap';
 import { Icon } from '@iconify/vue';
-import { wait } from '@/util/wait';
 import items from '@/data/navbar.json';
 
 const router = useRouter();
@@ -95,13 +94,9 @@ const playingNationalAnthem = ref<{
     audio: HTMLAudioElement;
     paused: boolean;
 }>();
-const originalTitle = ref('');
+const titleRenew = ref('0');
 
 const playNationalAnthem = (nation: string, country: string) => {
-    if (originalTitle.value === '') {
-        originalTitle.value = document.title;
-    }
-
     if (playingNationalAnthem.value?.nation === nation) {
         playingNationalAnthem.value.audio[playingNationalAnthem.value.paused ? 'play' : 'pause']();
         playingNationalAnthem.value.paused = !playingNationalAnthem.value.paused;
@@ -122,7 +117,6 @@ const playNationalAnthem = (nation: string, country: string) => {
 
         audio.addEventListener('ended', () => {
             playingNationalAnthem.value = undefined;
-            document.title = originalTitle.value;
         });
     }
 };
@@ -203,33 +197,35 @@ router.beforeEach(async (_, __, next) => {
     next();
 });
 
-router.afterEach(async () => {
-    await wait(100);
-    originalTitle.value = document.title;
-
-    if (playingNationalAnthem.value) {
-        document.title = `God bless ${playingNationalAnthem.value.country} ${getNationUnicodeFlag(
-            playingNationalAnthem.value.nation,
-        )}!`;
-    }
-});
-
 watch(
     playingNationalAnthem,
-    (value) => {
-        console.log(value);
-        if (value && !value.paused) {
-            document.title = `God bless ${value.country} ${getNationUnicodeFlag(value.nation)}!`;
-        } else {
-            document.title = originalTitle.value;
-        }
+    () => {
+        titleRenew.value = Date.now().toString();
     },
     { deep: true },
 );
 
+useHead({
+    titleTemplate: (title) => {
+        const nationalAnthem = playingNationalAnthem.value;
+
+        if (nationalAnthem && !nationalAnthem.paused) {
+            return `God bless ${playingNationalAnthem.value?.country} ${getNationUnicodeFlag(
+                nationalAnthem.nation,
+            )}!`;
+        }
+
+        return title
+            ? title === 'Hanzy' || title.split(' ').length > 1
+                ? title
+                : `${title} - Hanzy`
+            : 'Hanzy';
+    },
+    title: titleRenew as Ref<string>,
+});
+
 onMounted(() => {
     onResize();
-
     window.addEventListener('resize', onResize);
 });
 
