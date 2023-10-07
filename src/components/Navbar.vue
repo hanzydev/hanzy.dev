@@ -5,24 +5,28 @@
                 class="bg-[rgba(0,0,0,0.2)] backdrop-blur-md p-4 w-full rounded-xl justify-between flex h-14"
                 id="navbar"
             >
-                <div class="cursor-default flex items-center gap-2">
-                    <h2 class="font-bold">hànzy</h2>
+                <div class="flex items-center gap-2">
+                    <h2 class="font-bold cursor-default">hànzy</h2>
 
                     <Animation class="flex items-center gap-2" transformY="bottom">
                         <!-- flag Ukraine -->
                         <img
+                            class="cursor-pointer"
                             src="https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/svg/1f1fa-1f1e6.svg"
                             width="22"
                             height="22"
                             draggable="false"
+                            @click="playNationalAnthem('ua', 'Ukraine')"
                         />
 
                         <!-- flag Israel -->
                         <img
+                            class="cursor-pointer"
                             src="https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/svg/1f1ee-1f1f1.svg"
                             width="22"
                             height="22"
                             draggable="false"
+                            @click="playNationalAnthem('il', 'Israel')"
                         />
                     </Animation>
                 </div>
@@ -83,6 +87,40 @@ const router = useRouter();
 
 const isOpen = ref(false);
 const isMobile = ref(false);
+
+const playingNationalAnthem = ref<{
+    nation: string;
+    audio: HTMLAudioElement;
+    paused: boolean;
+}>();
+
+const playNationalAnthem = (nation: string, country?: string) => {
+    if (playingNationalAnthem.value?.nation === nation) {
+        playingNationalAnthem.value.audio[playingNationalAnthem.value.paused ? 'play' : 'pause']();
+        playingNationalAnthem.value.paused = !playingNationalAnthem.value.paused;
+    } else {
+        if (playingNationalAnthem.value) {
+            playingNationalAnthem.value.audio.pause();
+        }
+
+        const audio = new Audio(`https://nationalanthems.info/${nation}.mp3`);
+        audio.play();
+
+        playingNationalAnthem.value = {
+            nation,
+            audio,
+            paused: false,
+        };
+    }
+
+    const unicodeFlag = nation
+        .toUpperCase()
+        .replace(/./g, (char) => String.fromCodePoint(char.charCodeAt(0) + 127397));
+
+    document.title = playingNationalAnthem.value.paused
+        ? 'Home - Hànzy'
+        : `God bless ${country} ${unicodeFlag}!`;
+};
 
 const openNavbar = async () => {
     await gsap.to('#navbar', {
