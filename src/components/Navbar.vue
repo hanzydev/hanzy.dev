@@ -81,6 +81,7 @@
 <script setup lang="ts">
 import gsap from 'gsap';
 import { Icon } from '@iconify/vue';
+import { wait } from '@/util/wait';
 import items from '@/data/navbar.json';
 
 const router = useRouter();
@@ -90,11 +91,17 @@ const isMobile = ref(false);
 
 const playingNationalAnthem = ref<{
     nation: string;
+    country: string;
     audio: HTMLAudioElement;
     paused: boolean;
 }>();
+const originalTitle = ref('');
 
-const playNationalAnthem = (nation: string, country?: string) => {
+const playNationalAnthem = (nation: string, country: string) => {
+    if (originalTitle.value === '') {
+        originalTitle.value = document.title;
+    }
+
     if (playingNationalAnthem.value?.nation === nation) {
         playingNationalAnthem.value.audio[playingNationalAnthem.value.paused ? 'play' : 'pause']();
         playingNationalAnthem.value.paused = !playingNationalAnthem.value.paused;
@@ -108,19 +115,20 @@ const playNationalAnthem = (nation: string, country?: string) => {
 
         playingNationalAnthem.value = {
             nation,
+            country,
             audio,
             paused: false,
         };
+
+        audio.addEventListener('ended', () => {
+            playingNationalAnthem.value = undefined;
+            document.title = originalTitle.value;
+        });
     }
-
-    const unicodeFlag = nation
-        .toUpperCase()
-        .replace(/./g, (char) => String.fromCodePoint(char.charCodeAt(0) + 127397));
-
-    document.title = playingNationalAnthem.value.paused
-        ? 'Home - Hànzy'
-        : `God bless ${country} ${unicodeFlag}!`;
 };
+
+const getNationUnicodeFlag = (nation: string) =>
+    nation.toUpperCase().replace(/./g, (char) => String.fromCodePoint(char.charCodeAt(0) + 127397));
 
 const openNavbar = async () => {
     await gsap.to('#navbar', {
@@ -194,6 +202,30 @@ router.beforeEach(async (_, __, next) => {
 
     next();
 });
+
+router.afterEach(async () => {
+    await wait(100);
+    originalTitle.value = document.title;
+
+    if (playingNationalAnthem.value) {
+        document.title = `God bless ${playingNationalAnthem.value.country} ${getNationUnicodeFlag(
+            playingNationalAnthem.value.nation,
+        )}!`;
+    }
+});
+
+watch(
+    playingNationalAnthem,
+    (value) => {
+        console.log(value);
+        if (value && !value.paused) {
+            document.title = `God bless ${value.country} ${getNationUnicodeFlag(value.nation)}!`;
+        } else {
+            document.title = originalTitle.value;
+        }
+    },
+    { deep: true },
+);
 
 onMounted(() => {
     onResize();

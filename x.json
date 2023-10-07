@@ -1,0 +1,90 @@
+{
+    "resolvedOptions": {
+        "document": {
+            "location": {
+                "ancestorOrigins": {},
+                "href": "http://localhost:3000/skills",
+                "origin": "http://localhost:3000",
+                "protocol": "http:",
+                "host": "localhost:3000",
+                "hostname": "localhost",
+                "port": "3000",
+                "pathname": "/skills",
+                "search": "",
+                "hash": ""
+            }
+        },
+        "plugins": [
+            {
+                "hooks": {}
+            },
+            {
+                "mode": "server",
+                "hooks": {}
+            },
+            {
+                "hooks": {}
+            },
+            {
+                "hooks": {}
+            },
+            {
+                "hooks": {}
+            },
+            {
+                "hooks": {}
+            },
+            {
+                "hooks": {}
+            }
+        ]
+    },
+    "hooks": {
+        "_hooks": {
+            "tag:normalise": [null, null],
+            "tags:resolve": [null, null, null, null, null],
+            "ssr:render": [null],
+            "dom:renderTag": [null],
+            "entries:updated": [null],
+            "entries:resolve": [null],
+            "dom:beforeRender": [null]
+        },
+        "_deprecatedHooks": {}
+    },
+    "ssr": false,
+    "_dom": {
+        "elMap": {
+            "8480123": {},
+            "htmlAttrs": {},
+            "bodyAttrs": {},
+            "4e4e632": {},
+            "6e3956a": {},
+            "62b656a": {},
+            "e9ba39a": {},
+            "207e30f": {},
+            "11d744c": {},
+            "c68156c": {},
+            "656e1b8": {},
+            "de62fe": {},
+            "79e1518": {},
+            "e05a65c": {},
+            "889faf3": {},
+            "2002f88": {},
+            "54494ca": {},
+            "5ca6a63": {},
+            "41ccce8": {},
+            "527f5d6": {},
+            "c28122f": {},
+            "dcf01b9": {},
+            "530e322": {},
+            "f67ea1f": {},
+            "49dfc4": {},
+            "f83de17": {},
+            "55696f9": {},
+            "9e11cef": {},
+            "3f6ecef": {}
+        },
+        "pendingSideEffects": {},
+        "sideEffects": {}
+    }
+}
