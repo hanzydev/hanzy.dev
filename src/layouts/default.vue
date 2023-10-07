@@ -73,15 +73,15 @@ onUnmounted(() => {
     window.removeEventListener('keydown', checkKonami);
 });
 
-watch(selimBey, (value) => {
+watch(selimBey, async (value) => {
     if (value) {
-        nextTick(() => {
-            selimBeyVideoRef.value!.play();
-            selimBeyVideoRef.value!.onended = () => {
-                selimBey.value = false;
-                konamiCode.value = 0;
-            };
-        });
+        await nextTick();
+
+        selimBeyVideoRef.value!.play();
+        selimBeyVideoRef.value!.onended = () => {
+            selimBey.value = false;
+            konamiCode.value = 0;
+        };
     }
 });
 
