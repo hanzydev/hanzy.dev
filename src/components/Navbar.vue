@@ -5,7 +5,27 @@
                 class="bg-[rgba(0,0,0,0.2)] backdrop-blur-md p-4 w-full rounded-xl justify-between flex h-14"
                 id="navbar"
             >
-                <h2 class="cursor-default font-bold">hànzy</h2>
+                <div class="cursor-default flex items-center gap-2">
+                    <h2 class="font-bold">hànzy</h2>
+
+                    <Animation class="flex items-center gap-2" transformY="bottom">
+                        <!-- flag Ukraine -->
+                        <img
+                            src="https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/svg/1f1fa-1f1e6.svg"
+                            width="22"
+                            height="22"
+                            draggable="false"
+                        />
+
+                        <!-- flag Israel -->
+                        <img
+                            src="https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/svg/1f1ee-1f1f1.svg"
+                            width="22"
+                            height="22"
+                            draggable="false"
+                        />
+                    </Animation>
+                </div>
 
                 <button
                     class="absolute right-3"
