@@ -5,7 +5,7 @@
                 class="bg-[rgba(0,0,0,0.2)] backdrop-blur-md p-4 w-full rounded-xl justify-between flex h-14"
                 id="navbar"
             >
-                <div class="flex items-center gap-2">
+                <div class="flex items-center gap-2 mb-auto">
                     <h2 class="font-bold cursor-default">hànzy</h2>
 
                     <Animation class="flex items-center gap-2" transformY="bottom">
