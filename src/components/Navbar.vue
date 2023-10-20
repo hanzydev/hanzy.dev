@@ -18,16 +18,6 @@
                             draggable="false"
                             @click="playNationalAnthem('ua', 'Ukraine')"
                         />
-
-                        <!-- flag Israel -->
-                        <img
-                            class="cursor-pointer"
-                            src="https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/svg/1f1ee-1f1f1.svg"
-                            width="22"
-                            height="22"
-                            draggable="false"
-                            @click="playNationalAnthem('il', 'Israel')"
-                        />
                     </Animation>
                 </div>
 
