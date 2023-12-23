@@ -1,5 +1,7 @@
 <template>
-    <div class="text-gray-400 flex flex-col items-center text-center relative bottom-0 py-8 px-4">
+    <div
+        class="text-gray-400 flex flex-col items-center text-center relative bottom-0 py-8 px-4 max-sm:text-sm"
+    >
         <p>&copy; 2023-present <b>Hànzy</b>. All rights reserved.</p>
         <p>
             Everything on this site is protected by the
