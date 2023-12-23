@@ -6,7 +6,6 @@
     />
 
     <NuxtLayout>
-        <Navbar />
         <NuxtPage />
     </NuxtLayout>
 </template>
