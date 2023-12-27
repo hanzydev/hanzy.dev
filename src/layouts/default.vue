@@ -51,9 +51,18 @@ const onResize = () => {
     snowflakeCount.value = Math.floor(window.innerWidth / (window.innerWidth <= 1366 ? 10 : 16));
 };
 
+const onMouseMove = (event: MouseEvent) => {
+    gsap.to(snowflakeContainerRef.value!, {
+        x: gsap.utils.mapRange(0, 1, -100, 100, event.clientX / window.innerWidth),
+        duration: 0.5,
+        ease: 'sine.out',
+    });
+};
+
 onMounted(() => {
     onResize();
     window.addEventListener('resize', onResize);
+    window.addEventListener('mousemove', onMouseMove);
 });
 
 watch(snowflakeCount, async () => {
@@ -64,13 +73,15 @@ watch(snowflakeCount, async () => {
 
     for (const snowflake of snowflakesRef.value) {
         const animationSpeed = gsap.utils.random(4.5, 8);
+        const opacity = gsap.utils.random(0.35, 0.9);
 
         gsap.set(snowflake, {
             x: gsap.utils.random(0, window.innerWidth),
             y: gsap.utils.random(-200, -150),
             z: gsap.utils.random(-200, 200),
             scale: gsap.utils.random(1, 2.5),
-            opacity: gsap.utils.random(0.25, 0.9),
+            opacity,
+            filter: `blur(${opacity}px)`,
         });
 
         snowflakeAnimators.push(
