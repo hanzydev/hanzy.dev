@@ -12,7 +12,7 @@
 
 <script setup lang="ts">
 import { useLanyardStore } from '@/store';
-import { LanyardData } from '@/types';
+import type { LanyardData } from '@/types';
 
 const store = useLanyardStore();
 
