@@ -29,9 +29,6 @@ export default defineNuxtConfig({
     vue: {
         propsDestructure: true,
     },
-    experimental: {
-        inlineSSRStyles: false,
-    },
     app: {
         head: {
             meta: [
