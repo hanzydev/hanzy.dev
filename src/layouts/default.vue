@@ -17,7 +17,7 @@
         />
     </Animation>
 
-    <Animation>
+    <Animation v-if="showSnowflakes">
         <div class="fixed inset-0 w-full h-full pointer-events-none" ref="snowflakeContainerRef">
             <div
                 ref="snowflakesRef"
@@ -45,6 +45,9 @@ const snowflakeContainerRef = ref<HTMLDivElement>();
 const snowflakesRef = ref<HTMLDivElement[]>([]);
 const snowflakeCount = ref(0);
 
+const showSnowflakes = [11 /* December */, 0 /* January */, 1 /* February */].includes(
+    new Date().getMonth(),
+);
 let snowflakeAnimators: gsap.core.Tween[] = [];
 
 const onResize = () => {
@@ -61,48 +64,51 @@ const onMouseMove = (event: MouseEvent) => {
 
 onMounted(() => {
     onResize();
+
     window.addEventListener('resize', onResize);
     window.addEventListener('mousemove', onMouseMove);
 });
 
 watch(snowflakeCount, async () => {
-    snowflakeAnimators.forEach((animator) => animator.kill());
-    snowflakeAnimators = [];
+    if (showSnowflakes) {
+        snowflakeAnimators.forEach((animator) => animator.kill());
+        snowflakeAnimators = [];
 
-    await nextTick();
+        await nextTick();
 
-    for (const snowflake of snowflakesRef.value) {
-        const animationSpeed = gsap.utils.random(4.5, 8);
-        const opacity = gsap.utils.random(0.35, 0.9);
+        for (const snowflake of snowflakesRef.value) {
+            const animationSpeed = gsap.utils.random(4.5, 8);
+            const opacity = gsap.utils.random(0.35, 0.9);
 
-        gsap.set(snowflake, {
-            x: gsap.utils.random(0, window.innerWidth),
-            y: gsap.utils.random(-200, -150),
-            z: gsap.utils.random(-200, 200),
-            scale: gsap.utils.random(1, 2.5),
-            opacity,
-            filter: `blur(${opacity}px)`,
-        });
+            gsap.set(snowflake, {
+                x: gsap.utils.random(0, window.innerWidth),
+                y: gsap.utils.random(-200, -150),
+                z: gsap.utils.random(-200, 200),
+                scale: gsap.utils.random(1, 2.5),
+                opacity,
+                filter: `blur(${opacity}px)`,
+            });
 
-        snowflakeAnimators.push(
-            gsap.to(snowflake, {
-                duration: animationSpeed,
-                y: window.innerHeight + 100,
-                ease: 'none',
-                repeat: -1,
-                delay: -15,
-            }),
-        );
+            snowflakeAnimators.push(
+                gsap.to(snowflake, {
+                    duration: animationSpeed,
+                    y: window.innerHeight + 100,
+                    ease: 'none',
+                    repeat: -1,
+                    delay: -15,
+                }),
+            );
 
-        snowflakeAnimators.push(
-            gsap.to(snowflake, {
-                duration: animationSpeed - 1,
-                x: `+=${gsap.utils.random(-50, 200)}`,
-                repeat: -1,
-                yoyo: true,
-                ease: 'sine.inOut',
-            }),
-        );
+            snowflakeAnimators.push(
+                gsap.to(snowflake, {
+                    duration: animationSpeed - 1,
+                    x: `+=${gsap.utils.random(-50, 200)}`,
+                    repeat: -1,
+                    yoyo: true,
+                    ease: 'sine.inOut',
+                }),
+            );
+        }
     }
 });
 
