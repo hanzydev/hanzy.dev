@@ -132,11 +132,14 @@ watch(sees, (value) => {
 });
 
 watch(cursorPosition, (value) => {
-    gsap.to(cursorRef.value!, {
-        ...value,
-        opacity: 1,
-        duration: sees.value ? 0.2 : 0,
-    });
+    if (!sees.value) sees.value = true;
+    else {
+        gsap.to(cursorRef.value!, {
+            ...value,
+            opacity: 1,
+            duration: sees.value ? 0.2 : 0,
+        });
+    }
 });
 
 watch(snowflakeCount, async () => {
