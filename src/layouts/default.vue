@@ -27,6 +27,13 @@
         </div>
     </Animation>
 
+    <div class="pointer-events-none">
+        <div
+            ref="cursorRef"
+            class="fixed opacity-0 z-[9999] bg-white bg-opacity-5 rounded-full w-9 h-9"
+        ></div>
+    </div>
+
     <div class="flex flex-col min-h-screen w-full">
         <Navbar />
         <slot />
@@ -41,6 +48,11 @@ import '@/styles/main.css';
 
 import gsap from 'gsap';
 
+const sees = ref(false);
+const cursorRef = ref<HTMLDivElement>();
+const cursorPosition = reactive({ x: 0, y: 0 });
+const isHovering = ref(false);
+
 const snowflakeContainerRef = ref<HTMLDivElement>();
 const snowflakesRef = ref<HTMLDivElement[]>([]);
 const snowflakeCount = ref(0);
@@ -51,22 +63,80 @@ const showSnowflakes = [11 /* December */, 0 /* January */, 1 /* February */].in
 let snowflakeAnimators: gsap.core.Tween[] = [];
 
 const onResize = () => {
-    snowflakeCount.value = Math.floor(window.innerWidth / (window.innerWidth <= 1366 ? 10 : 16));
+    if (showSnowflakes) {
+        snowflakeCount.value = Math.floor(
+            window.innerWidth / (window.innerWidth <= 1366 ? 10 : 16),
+        );
+    }
 };
 
 const onMouseMove = (event: MouseEvent) => {
-    gsap.to(snowflakeContainerRef.value!, {
-        x: gsap.utils.mapRange(0, 1, -100, 100, event.clientX / window.innerWidth),
-        duration: 0.5,
-        ease: 'sine.out',
+    if (showSnowflakes) {
+        gsap.to(snowflakeContainerRef.value!, {
+            x: gsap.utils.mapRange(0, 1, -100, 100, event.clientX / window.innerWidth),
+            duration: 0.5,
+            ease: 'sine.out',
+        });
+    }
+
+    cursorPosition.x = event.clientX - cursorRef.value!.offsetWidth / 2;
+    cursorPosition.y = event.clientY - cursorRef.value!.offsetHeight / 2;
+};
+
+const onMouseDown = () => {
+    gsap.to(cursorRef.value!, {
+        scale: isHovering.value ? 1.2 : 0.8,
+        duration: 0.2,
+    });
+};
+
+const onMouseUp = () => {
+    gsap.to(cursorRef.value!, {
+        scale: isHovering.value ? 1.5 : 1,
+        duration: 0.2,
     });
 };
 
 onMounted(() => {
     onResize();
 
-    window.addEventListener('resize', onResize);
-    window.addEventListener('mousemove', onMouseMove);
+    document.body.addEventListener('resize', onResize);
+    document.body.addEventListener('mousemove', onMouseMove);
+    document.body.addEventListener('mousedown', onMouseDown);
+    document.body.addEventListener('mouseup', onMouseUp);
+    document.body.addEventListener('mouseleave', () => (sees.value = false));
+    document.body.addEventListener('mouseenter', () => (sees.value = true));
+});
+
+watch([cursorPosition, sees], ([_, sees]) => {
+    if (sees) {
+        const isHoveringLink = document.querySelector('a:hover');
+        const isHoveringButton = document.querySelector('button:hover');
+
+        isHovering.value = !!(isHoveringLink || isHoveringButton);
+    }
+});
+
+watch(isHovering, (value) => {
+    gsap.to(cursorRef.value!, {
+        scale: value ? 1.5 : 1,
+        duration: 0.2,
+    });
+});
+
+watch(sees, (value) => {
+    gsap.to(cursorRef.value!, {
+        opacity: +value,
+        duration: 0.2,
+    });
+});
+
+watch(cursorPosition, (value) => {
+    gsap.to(cursorRef.value!, {
+        ...value,
+        opacity: 1,
+        duration: sees.value ? 0.2 : 0,
+    });
 });
 
 watch(snowflakeCount, async () => {
