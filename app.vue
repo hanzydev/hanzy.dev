@@ -1,6 +1,10 @@
 <template>
     <NuxtRouteAnnouncer />
-    <NuxtLoadingIndicator :throttle="0" :duration="3000" :color="colors.indigo[500]" />
+    <NuxtLoadingIndicator
+        :throttle="0"
+        :duration="3000"
+        :color="colors.indigo[500]"
+    />
 
     <Head>
         <Meta
