@@ -1,6 +1,6 @@
 <template>
     <div
-        class="mt-auto flex flex-col items-center px-4 py-8 text-center text-slate-400 max-sm:text-sm"
+        class="flex flex-col items-center px-4 py-8 text-center text-slate-400 max-sm:text-sm"
     >
         <p>
             &copy; 2024-present

@@ -24,10 +24,11 @@
         <Meta property="og:url" content="https://hanzy.dev" />
     </Head>
 
-    <div class="flex h-full min-h-screen flex-col">
+    <div class="flex h-full min-h-screen flex-col justify-between">
         <NuxtLayout>
             <NuxtPage />
         </NuxtLayout>
+        <Footer />
     </div>
 </template>
 
