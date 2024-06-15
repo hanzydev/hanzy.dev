@@ -22,33 +22,33 @@
             <div class="flex items-center gap-2 max-sm:hidden">
                 <Button
                     v-for="(item, index) in navbar"
+                    :key="index"
                     :href="item.href"
                     :icon="item.icon"
-                    :key="index"
                     :class="[
                         'gap-2',
                         $route.path === item.href && 'bg-secondary',
                     ]"
                 >
-                    <span>{{ upperFirst(item.name) }}</span>
+                    <span>{{ item.name }}</span>
                 </Button>
             </div>
 
             <div
-                class="hidden w-full gap-2 space-y-2 overflow-hidden sm:!hidden"
                 ref="mobileNavbarRef"
+                class="hidden w-full gap-2 space-y-2 overflow-hidden sm:!hidden"
             >
                 <Button
                     v-for="(item, index) in navbar"
+                    :key="index"
                     :href="item.href"
                     :icon="item.icon"
-                    :key="index"
                     :class="[
                         'gap-2',
                         $route.path === item.href && 'bg-secondary',
                     ]"
                 >
-                    <span>{{ upperFirst(item.name) }}</span>
+                    <span>{{ item.name }}</span>
                 </Button>
             </div>
         </div>
@@ -56,8 +56,7 @@
 </template>
 
 <script setup lang="ts">
-import { gsap, Cubic } from 'gsap';
-import { upperFirst } from 'lodash-es';
+import { Cubic, gsap } from 'gsap';
 
 import navbar from '@/utils/data/navbar.json';
 

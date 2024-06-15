@@ -1,21 +1,21 @@
 [
     {
-        "name": "home",
+        "name": "Home",
         "icon": "fluent:home-24-filled",
         "href": "/"
     },
     {
-        "name": "skills",
+        "name": "Skills",
         "icon": "ic:round-scoreboard",
         "href": "/skills"
     },
     {
-        "name": "repositories",
+        "name": "Repositories",
         "icon": "heroicons-solid:terminal",
         "href": "/repos"
     },
     {
-        "name": "contact",
+        "name": "Contact",
         "icon": "fluent:mail-24-filled",
         "href": "/contact"
     }

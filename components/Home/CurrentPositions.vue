@@ -15,7 +15,7 @@
                 <span class="font-medium text-slate-300">
                     as {{ position.role }}
                 </span>
-                <p class=" text-slate-400">
+                <p class="text-slate-400">
                     {{ position.description }}
                 </p>
             </a>
