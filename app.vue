@@ -1,6 +1,6 @@
 <template>
     <NuxtRouteAnnouncer />
-    <NuxtLoadingIndicator :throttle="0" :duration="3000" :color="indigo[500]" />
+    <NuxtLoadingIndicator :throttle="0" :duration="3000" :color="colors.indigo[500]" />
 
     <Head>
         <Meta
@@ -20,7 +20,7 @@
 </template>
 
 <script setup lang="ts">
-import { indigo } from 'tailwindcss/colors';
+import colors from 'tailwindcss/colors';
 
 useHead({
     title: 'Hanzy',
