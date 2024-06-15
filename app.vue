@@ -7,6 +7,16 @@
     />
 
     <Head>
+        <Title>Hanzy</Title>
+        <Meta property="og:title" content="Hanzy" />
+        <Meta
+            name="description"
+            content="Hi, I'm Emirhan (Hànzy), a young full-stack developer from Türkiye with 4 years of experience in web development."
+        />
+        <Meta
+            property="og:description"
+            content="Hi, I'm Emirhan (Hànzy), a young full-stack developer from Türkiye with 4 years of experience in web development."
+        />
         <Meta
             name="keywords"
             content="hànzy, hànzydev, hanzy, hanzydev, emirhan77, emirhan"
@@ -16,9 +26,7 @@
 
     <div class="flex h-full min-h-screen flex-col">
         <NuxtLayout>
-            <div class="md:mt-16">
-                <NuxtPage />
-            </div>
+            <NuxtPage />
         </NuxtLayout>
     </div>
 </template>
@@ -27,7 +35,6 @@
 import colors from 'tailwindcss/colors';
 
 useHead({
-    title: 'Hanzy',
     titleTemplate: (title) =>
         title && title !== 'Hanzy' ? `${title} | Hanzy` : 'Hanzy',
 });

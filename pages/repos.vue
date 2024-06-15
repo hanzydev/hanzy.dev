@@ -2,6 +2,7 @@
     <div>
         <Head>
             <Title>Repositories</Title>
+            <Meta property="og:title" content="Repositories | Hanzy" />
         </Head>
 
         <Container class="space-y-4">

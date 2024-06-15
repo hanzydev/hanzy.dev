@@ -2,6 +2,7 @@
     <div>
         <Head>
             <Title>Home</Title>
+            <Meta property="og:title" content="Home | Hanzy" />
         </Head>
 
         <Container>

@@ -2,6 +2,7 @@
     <div>
         <Head>
             <Title>Get in touch</Title>
+            <Meta property="og:title" content="Get in touch | Hanzy" />
         </Head>
 
         <Container class="space-y-4">
