@@ -36,9 +36,4 @@ export default defineNuxtConfig({
             ],
         },
     },
-    runtimeConfig: {
-        public: {
-            discordUserId: process.env.NUXT_PUBLIC_DISCORD_USER_ID,
-        },
-    },
 });
