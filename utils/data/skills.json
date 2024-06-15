@@ -1,0 +1,77 @@
+[
+    {
+        "name": "JavaScript",
+        "icon": "skill-icons:javascript",
+        "href": "https://developer.mozilla.org/en-US/docs/Web/JavaScript"
+    },
+    {
+        "name": "TypeScript",
+        "icon": "skill-icons:typescript",
+        "href": "https://www.typescriptlang.org/"
+    },
+    {
+        "name": "HTML",
+        "icon": "skill-icons:html",
+        "href": "https://developer.mozilla.org/en-US/docs/Web/HTML"
+    },
+    {
+        "name": "CSS",
+        "icon": "skill-icons:css",
+        "href": "https://developer.mozilla.org/en-US/docs/Web/CSS"
+    },
+    {
+        "name": "SASS",
+        "icon": "logos:sass",
+        "href": "https://sass-lang.com/"
+    },
+    {
+        "name": "C#",
+        "icon": "logos:c-sharp",
+        "href": "https://docs.microsoft.com/en-us/dotnet/csharp/"
+    },
+    {
+        "name": "Python",
+        "icon": "logos:python",
+        "href": "https://www.python.org/"
+    },
+    {
+        "name": "Vue",
+        "icon": "logos:vue",
+        "href": "https://vuejs.org/"
+    },
+    {
+        "name": "Nuxt",
+        "icon": "logos:nuxt-icon",
+        "href": "https://nuxt.com/"
+    },
+    {
+        "name": "Svelte & Kit",
+        "icon": "logos:svelte-icon",
+        "href": "https://svelte.dev/"
+    },
+    {
+        "name": "React",
+        "icon": "logos:react",
+        "href": "https://reactjs.org/"
+    },
+    {
+        "name": "Next.js",
+        "icon": "logos:nextjs-icon",
+        "href": "https://nextjs.org/"
+    },
+    {
+        "name": "Node.js",
+        "icon": "logos:nodejs-icon",
+        "href": "https://nodejs.org/en/"
+    },
+    {
+        "name": "MongoDB",
+        "icon": "logos:mongodb-icon",
+        "href": "https://www.mongodb.com/"
+    },
+    {
+        "name": "PostgreSQL",
+        "icon": "logos:postgresql",
+        "href": "https://www.postgresql.org/"
+    }
+]

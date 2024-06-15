@@ -1,0 +1,16 @@
+[
+    {
+        "name": "OpenAnime",
+        "image": "/openanime.png",
+        "role": "Head Developer",
+        "link": "https://openani.me",
+        "description": "OpenAnime enhances your anime viewing with real-time GPU upscaling, synchronized 'watch together' feature, and clip creation and sharing."
+    },
+    {
+        "name": "Nodesty",
+        "image": "/nodesty.png",
+        "role": "Developer and Support Team",
+        "link": "https://nodesty.com",
+        "description": "Nodesty is a hosting company that provides reliable and efficient hosting solutions for websites and applications."
+    }
+]
