@@ -24,5 +24,5 @@
 </template>
 
 <script setup lang="ts">
-import currentPositions from '@/utils/data/currentPositions.json';
+import currentPositions from '@/data/currentPositions.json';
 </script>

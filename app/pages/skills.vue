@@ -36,5 +36,5 @@
 </template>
 
 <script setup lang="ts">
-import skills from '@/utils/data/skills.json';
+import skills from '@/data/skills.json';
 </script>

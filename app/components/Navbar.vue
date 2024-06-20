@@ -58,7 +58,7 @@
 <script setup lang="ts">
 import { Cubic, gsap } from 'gsap';
 
-import navbar from '@/utils/data/navbar.json';
+import navbar from '@/data/navbar.json';
 
 const router = useRouter();
 

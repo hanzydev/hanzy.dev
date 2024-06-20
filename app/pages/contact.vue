@@ -41,5 +41,5 @@
 </template>
 
 <script setup lang="ts">
-import links from '@/utils/data/links.json';
+import links from '@/data/links.json';
 </script>
