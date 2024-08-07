@@ -19,7 +19,7 @@
                 />
             </div>
 
-            <div class="mt-4 flex items-center gap-2 max-sm:hidden">
+            <div class="flex items-center gap-2 max-sm:hidden">
                 <Button
                     v-for="(item, index) in navbar"
                     :key="index"
