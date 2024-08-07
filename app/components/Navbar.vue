@@ -1,7 +1,7 @@
 <template>
     <Container>
         <div
-            class="flex w-full items-center justify-between rounded-lg border border-indigo-900 bg-primary p-4 max-sm:flex-col max-sm:space-y-4 sm:p-2"
+            class="flex w-full items-center justify-between rounded-lg border border-indigo-900 bg-primary p-4 max-sm:flex-col sm:p-2"
         >
             <div class="flex w-full items-center justify-between">
                 <h3
@@ -19,7 +19,7 @@
                 />
             </div>
 
-            <div class="flex items-center gap-2 max-sm:hidden">
+            <div class="mt-4 flex items-center gap-2 max-sm:hidden">
                 <Button
                     v-for="(item, index) in navbar"
                     :key="index"
@@ -34,63 +34,58 @@
                 </Button>
             </div>
 
-            <div
-                ref="mobileNavbarRef"
-                class="hidden w-full gap-2 space-y-2 overflow-hidden sm:!hidden"
+            <Transition
+                enter-from-class="h-0"
+                leave-to-class="h-0"
+                enter-active-class="animate-in fade-in transition-all overflow-hidden"
+                leave-active-class="animate-out fade-out transition-all overflow-hidden"
+                enter-to-class="h-[var(--height)]"
+                leave-from-class="h-[var(--height)]"
+                :style="{ '--height': `${mobileNavbarHeight}px` }"
             >
-                <Button
-                    v-for="(item, index) in navbar"
-                    :key="index"
-                    :href="item.href"
-                    :icon="item.icon"
-                    :class="[
-                        'gap-2',
-                        $route.path === item.href && 'bg-secondary',
-                    ]"
+                <div
+                    v-if="isOpen"
+                    ref="mobileNavbarRef"
+                    class="w-full space-y-2 overflow-hidden sm:!hidden"
                 >
-                    <span>{{ item.name }}</span>
-                </Button>
-            </div>
+                    <Button
+                        v-for="(item, index) in navbar"
+                        :key="index"
+                        :href="item.href"
+                        :icon="item.icon"
+                        :class="[
+                            'gap-2',
+                            $route.path === item.href && 'bg-secondary',
+                            index === 0 && 'mt-4',
+                        ]"
+                    >
+                        <span>{{ item.name }}</span>
+                    </Button>
+                </div>
+            </Transition>
         </div>
     </Container>
 </template>
 
 <script setup lang="ts">
-import { Cubic, gsap } from 'gsap';
-
 import navbar from '@/data/navbar.json';
 
 const router = useRouter();
 
 const mobileNavbarRef = ref<HTMLElement>();
-const isOpen = ref(false);
+const mobileNavbarHeight = ref(0);
 
-const tl = computed(() =>
-    gsap
-        .timeline({ paused: true, reversed: true })
-        .set(mobileNavbarRef.value!, {
-            opacity: 1,
-            height: 'auto',
-            display: 'block',
-        })
-        .from(
-            mobileNavbarRef.value!,
-            {
-                opacity: 0,
-                height: 0,
-                duration: 0.15,
-                ease: Cubic.easeOut,
-            },
-            '+=0.001',
-        ),
-);
+const isOpen = ref(false);
 
 router.beforeEach(async (_, __, next) => {
     isOpen.value = false;
     next();
 });
 
-watch(isOpen, (value) => {
-    tl.value[value ? 'play' : 'reverse']();
+watch(isOpen, async (value) => {
+    if (value) {
+        await nextTick();
+        mobileNavbarHeight.value = mobileNavbarRef.value!.scrollHeight;
+    }
 });
 </script>
