@@ -1,16 +1,25 @@
 <template>
     <Container>
         <div
-            class="flex w-full items-center justify-between rounded-lg border border-indigo-900 bg-primary p-4 max-sm:flex-col sm:p-2"
+            flex="~ items-center justify-between"
+            wfull
+            border="~ indigo-900"
+            rounded-lg
+            bg-primary
+            p4
+            lt-sm:flex-col
+            sm:p2
         >
-            <div class="flex w-full items-center justify-between">
-                <h3
-                    class="ml-3.5 cursor-default font-semibold uppercase sm:ml-2"
-                >
+            <div flex="~ items-center justify-between" wfull>
+                <h3 cursor-default font-semibold uppercase ml="3.5 sm:2">
                     hànzy
                 </h3>
                 <Button
-                    class="ml-auto h-10 w-10 !p-0 sm:hidden"
+                    mla
+                    h10
+                    w10
+                    sm:hidden
+                    !p0
                     alignment="center"
                     aria-label="Toggle navbar"
                     :icon="isOpen ? 'tabler:x' : 'tabler:menu-2'"
@@ -19,16 +28,14 @@
                 />
             </div>
 
-            <div class="flex items-center gap-2 max-sm:hidden">
+            <div flex="~ items-center gap2" lt-sm:hidden>
                 <Button
                     v-for="(item, index) in navbar"
                     :key="index"
                     :href="item.href"
                     :icon="item.icon"
-                    :class="[
-                        'gap-2',
-                        $route.path === item.href && 'bg-secondary',
-                    ]"
+                    :class="$route.path === item.href && 'bg-secondary'"
+                    gap2
                 >
                     <span>{{ item.name }}</span>
                 </Button>
@@ -39,14 +46,14 @@
                 leave-to-class="h-0"
                 enter-active-class="animate-in fade-in transition-all overflow-hidden"
                 leave-active-class="animate-out fade-out transition-all overflow-hidden"
-                enter-to-class="h-[var(--height)]"
-                leave-from-class="h-[var(--height)]"
+                enter-to-class="h[--height]"
+                leave-from-class="h[--height]"
                 :style="{ '--height': `${mobileNavbarHeight}px` }"
             >
                 <div
                     v-if="isOpen"
                     ref="mobileNavbarRef"
-                    class="w-full space-y-2 overflow-hidden sm:!hidden"
+                    class="wfull overflow-hidden space-y-2 sm:!hidden"
                 >
                     <Button
                         v-for="(item, index) in navbar"
@@ -54,10 +61,10 @@
                         :href="item.href"
                         :icon="item.icon"
                         :class="[
-                            'gap-2',
                             $route.path === item.href && 'bg-secondary',
-                            index === 0 && 'mt-4',
+                            index === 0 && 'mt4',
                         ]"
+                        gap2
                     >
                         <span>{{ item.name }}</span>
                     </Button>

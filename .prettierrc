@@ -4,7 +4,5 @@
     "singleQuote": true,
     "jsxSingleQuote": true,
     "trailingComma": "all",
-    "htmlWhitespaceSensitivity": "ignore",
-    "tailwindConfig": "tailwind.config.ts",
-    "plugins": ["prettier-plugin-tailwindcss"]
+    "htmlWhitespaceSensitivity": "ignore"
 }

@@ -1,8 +1,12 @@
 <template>
     <component
         :is="resolved"
+        flex="~ items-center"
+        rounded-md
+        p="y2 x3"
+        transition-all
+        active:scale-95
         :class="[
-            'flex items-center rounded-md px-3 py-2 transition-all active:scale-95',
             {
                 'bg-indigo-600 text-white': variant === 'accent',
                 'bg-primary hover:bg-secondary': variant === 'primary',
@@ -20,7 +24,7 @@
         :href
         type="button"
     >
-        <Icon v-if="icon" :name="icon" :size="iconSize" class="flex-shrink-0" />
+        <Icon v-if="icon" :name="icon" :size="iconSize" flex-shrink-0 />
         <slot />
     </component>
 </template>

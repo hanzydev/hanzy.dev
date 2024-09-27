@@ -1,18 +1,26 @@
 <template>
-    <div class="space-y-4">
-        <h2 class="text-3xl font-bold max-md:text-center md:text-4xl">
+    <div space-y-4>
+        <h2 text-3xl font-bold lt-md:text-center md:text-4xl>
             Current Positions 🚀
         </h2>
-        <div class="grid gap-4 md:grid-cols-2">
+        <div grid="~ md:cols-2 gap4">
             <a
                 v-for="(position, index) in currentPositions"
                 :key="index"
                 :href="position.link"
                 target="_blank"
-                class="cursor-pointer space-y-4 rounded-lg border border-indigo-900 bg-primary p-4 transition-all hover:scale-105 hover:bg-secondary active:scale-95"
+                border="~ indigo-900"
+                cursor-pointer
+                rounded-lg
+                bg-primary
+                p4
+                transition-all
+                active:scale-95
+                hover="scale-105 bg-secondary"
+                space-y-4
             >
-                <div class="flex items-center justify-between gap-2">
-                    <h3 class="text-2xl font-semibold">{{ position.name }}</h3>
+                <div flex="~ items-center justify-between gap2">
+                    <h3 text-2xl font-semibold>{{ position.name }}</h3>
                     <img
                         :src="position.image"
                         width="40"
@@ -20,10 +28,8 @@
                         :alt="position.name"
                     />
                 </div>
-                <span class="font-medium text-slate-300">
-                    as {{ position.role }}
-                </span>
-                <p class="text-slate-400">
+                <span text-slate-300 font-medium>as {{ position.role }}</span>
+                <p text-slate-400>
                     {{ position.description }}
                 </p>
             </a>

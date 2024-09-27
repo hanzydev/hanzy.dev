@@ -3,7 +3,7 @@
     <NuxtLoadingIndicator
         :throttle="0"
         :duration="3000"
-        :color="colors.indigo[500]"
+        :color="theme.colors.indigo[500]"
     />
 
     <Head>
@@ -24,7 +24,7 @@
         <Meta property="og:url" content="https://hanzy.dev" />
     </Head>
 
-    <div class="flex h-full min-h-screen flex-col justify-between">
+    <div flex="~ col justify-between" hfull min-hscreen>
         <NuxtLayout>
             <NuxtPage />
         </NuxtLayout>
@@ -33,7 +33,7 @@
 </template>
 
 <script setup lang="ts">
-import colors from 'tailwindcss/colors';
+import { theme } from '@unocss/preset-mini';
 
 useHead({
     titleTemplate: (title) =>

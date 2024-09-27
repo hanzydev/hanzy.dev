@@ -2,16 +2,17 @@
 export default defineNuxtConfig({
     future: { compatibilityVersion: 4 },
     devtools: { enabled: true },
+
     modules: [
-        '@nuxtjs/tailwindcss',
         '@nuxt/eslint',
         '@nuxt/fonts',
         '@nuxt/icon',
         '@vueuse/nuxt',
+        '@unocss/nuxt',
     ],
-    tailwindcss: {
-        cssPath: '@/styles/main.css',
-    },
+
+    css: ['@unocss/reset/tailwind.css', '~/styles/main.css'],
+
     fonts: {
         families: [
             {
@@ -20,9 +21,11 @@ export default defineNuxtConfig({
             },
         ],
     },
+
     vue: {
         propsDestructure: true,
     },
+
     app: {
         pageTransition: { name: 'page', mode: 'out-in' },
         head: {
@@ -37,4 +40,6 @@ export default defineNuxtConfig({
             ],
         },
     },
+
+    compatibilityDate: '2024-09-27',
 });

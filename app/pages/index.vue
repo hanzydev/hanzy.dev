@@ -6,7 +6,7 @@
         </Head>
 
         <Container>
-            <div class="space-y-20">
+            <div space-y-20>
                 <HomeProfile />
                 <HomeCurrentPositions />
             </div>

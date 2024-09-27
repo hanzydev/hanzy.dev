@@ -3,20 +3,21 @@
         <Title>{{ error.statusMessage }} | {{ error.statusCode }}</Title>
     </Head>
 
-    <div
-        class="flex min-h-screen flex-col items-center justify-center gap-4 text-center"
-    >
-        <h1 class="text-9xl font-extrabold text-indigo-500 md:text-[10rem]">
+    <div flex="~ col items-center justify-center gap4" min-hscreen text-center>
+        <h1 text-9xl text-indigo-500 font-extrabold md:text-10rem>
             {{ error.statusCode }}
         </h1>
 
-        <p class="text-2xl font-medium text-gray-500 md:text-3xl">
+        <p text-2xl text-gray-500 font-medium md:text-3xl>
             {{ error.statusMessage }}
         </p>
 
         <Button
             variant="accent"
-            class="w-fit flex-row-reverse gap-2 px-6"
+            wfit
+            flex-row-reverse
+            gap2
+            px6
             icon="heroicons-solid:arrow-right"
             href="/"
         >

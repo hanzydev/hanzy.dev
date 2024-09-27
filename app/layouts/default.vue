@@ -1,7 +1,7 @@
 <template>
     <div>
         <Navbar />
-        <div class="md:mt-16">
+        <div md:mt16>
             <slot />
         </div>
     </div>

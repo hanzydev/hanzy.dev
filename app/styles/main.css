@@ -8,6 +8,6 @@
     }
 
     body {
-        @apply h-full min-h-screen w-full bg-gradient-to-bl from-background to-foreground font-inter text-white;
+        @apply hfull min-hscreen wfull bg-gradient-to-bl from-background to-foreground font-inter text-white;
     }
 }
