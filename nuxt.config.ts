@@ -3,13 +3,7 @@ export default defineNuxtConfig({
     future: { compatibilityVersion: 4 },
     devtools: { enabled: true },
 
-    modules: [
-        '@nuxt/eslint',
-        '@nuxt/fonts',
-        '@nuxt/icon',
-        '@vueuse/nuxt',
-        '@unocss/nuxt',
-    ],
+    modules: ['@nuxt/eslint', '@nuxt/fonts', '@nuxt/icon', '@vueuse/nuxt', '@unocss/nuxt'],
 
     css: ['@unocss/reset/tailwind.css', '~/styles/main.css'],
 

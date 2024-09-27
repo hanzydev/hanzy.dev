@@ -13,14 +13,11 @@ interface Repository {
 
 export default cachedEventHandler<Promise<Repository[]>>(
     async () => {
-        const data = (await fetch(
-            `https://api.github.com/users/${process.env.GH_USERNAME}/repos`,
-            {
-                headers: {
-                    Authorization: `Bearer ${process.env.GH_TOKEN}`,
-                },
+        const data = (await fetch(`https://api.github.com/users/${process.env.GH_USERNAME}/repos`, {
+            headers: {
+                Authorization: `Bearer ${process.env.GH_TOKEN}`,
             },
-        ).then((res) => res.json())) as Record<string, any>[];
+        }).then((res) => res.json())) as Record<string, any>[];
 
         return data
             .filter((r) => !r.fork)

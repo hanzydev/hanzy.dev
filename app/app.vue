@@ -1,10 +1,6 @@
 <template>
     <NuxtRouteAnnouncer />
-    <NuxtLoadingIndicator
-        :throttle="0"
-        :duration="3000"
-        :color="theme.colors.indigo[500]"
-    />
+    <NuxtLoadingIndicator :throttle="0" :duration="3000" :color="theme.colors.indigo[500]" />
 
     <Head>
         <Title>Hanzy</Title>
@@ -17,10 +13,7 @@
             property="og:description"
             content="Hi, I'm Emirhan (Hànzy), a young full-stack developer from Türkiye with 4 years of experience in web development."
         />
-        <Meta
-            name="keywords"
-            content="hànzy, hànzydev, hanzy, hanzydev, emirhan77, emirhan"
-        />
+        <Meta name="keywords" content="hànzy, hànzydev, hanzy, hanzydev, emirhan77, emirhan" />
         <Meta property="og:url" content="https://hanzy.dev" />
     </Head>
 
@@ -36,8 +29,7 @@
 import { theme } from '@unocss/preset-mini';
 
 useHead({
-    titleTemplate: (title) =>
-        title && title !== 'Hanzy' ? `${title} | Hanzy` : 'Hanzy',
+    titleTemplate: (title) => (title && title !== 'Hanzy' ? `${title} | Hanzy` : 'Hanzy'),
 });
 </script>
 

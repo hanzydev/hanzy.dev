@@ -10,9 +10,8 @@
                 <h2 text-3xl font-bold md:text-4xl>Get in touch 📧</h2>
 
                 <p text-slate-400 font-medium>
-                    I'm open to new opportunities, so if you have any questions
-                    or just want to say hello, don't hesitate to get in touch
-                    with me.
+                    I'm open to new opportunities, so if you have any questions or just want to say
+                    hello, don't hesitate to get in touch with me.
                 </p>
             </div>
 

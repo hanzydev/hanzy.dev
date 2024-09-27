@@ -69,11 +69,7 @@
                                 lt-sm:hidden
                             >
                                 <GhIconsLicense />
-                                {{
-                                    repo.license
-                                        ? repo.license.name
-                                        : 'No license'
-                                }}
+                                {{ repo.license ? repo.license.name : 'No license' }}
                             </button>
                         </div>
                         <button

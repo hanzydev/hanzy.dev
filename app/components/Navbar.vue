@@ -11,9 +11,7 @@
             sm:p2
         >
             <div flex="~ items-center justify-between" wfull>
-                <h3 cursor-default font-semibold uppercase ml="3.5 sm:2">
-                    hànzy
-                </h3>
+                <h3 cursor-default font-semibold uppercase ml="3.5 sm:2">hànzy</h3>
                 <Button
                     mla
                     h10
@@ -61,10 +59,7 @@
                         :key="index"
                         :href="item.href"
                         :icon="item.icon"
-                        :class="[
-                            $route.path === item.href && 'bg-secondary',
-                            index === 0 && 'mt4',
-                        ]"
+                        :class="[$route.path === item.href && 'bg-secondary', index === 0 && 'mt4']"
                         gap2
                         cursor-none="!"
                     >

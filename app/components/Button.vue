@@ -12,14 +12,11 @@
                 'bg-primary hover:bg-secondary': variant === 'primary',
                 'bg-secondary hover:bg-primary': variant === 'secondary',
                 'align-left justify-start text-left': alignment === 'left',
-                'align-center justify-center text-center':
-                    alignment === 'center',
+                'align-center justify-center text-center': alignment === 'center',
                 'align-right justify-end text-right': alignment === 'right',
             },
         ]"
-        :target="
-            href ? (href?.startsWith('http') ? '_blank' : '_self') : undefined
-        "
+        :target="href ? (href?.startsWith('http') ? '_blank' : '_self') : undefined"
         :href
         type="button"
     >
