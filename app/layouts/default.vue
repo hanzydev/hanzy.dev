@@ -4,27 +4,24 @@
             enter-active-class="animate-in fade-in"
             leave-active-class="animate-out fade-out"
         >
-            <div v-if="showCursor" pointer-events-none fixed z-9999 backdrop-blur-md>
+            <div v-if="showCursor" pointer-events-none fixed z-9999>
                 <div
                     ref="cursorCircle"
                     border="~ indigo-600"
-                    fixed
-                    z-9999
+                    absolute
                     size-9
                     select-none
                     rounded-full
                     bg-indigo-600
                     bg-opacity-20
-                    backdrop-blur-md
                     transition-transform
                     :style="cursorCircleStyle"
                 ></div>
                 <div
                     ref="cursorDot"
-                    fixed
+                    absolute
                     left-0.25
                     top-0.25
-                    z-9999
                     size-2
                     rounded-full
                     bg-white
@@ -67,6 +64,7 @@ const cursorCircleStyle = computed<CSSProperties>(() => ({
         tinyCursor.value === largeCursor.value ? 1 : largeCursor.value ? 1.3 : 0.8
     })`,
     transitionTimingFunction: 'cubic-bezier(0, 0, 0.58, 1)',
+    transitionDuration: '0.125s',
 }));
 
 const cursorDotStyle = computed<CSSProperties>(() => ({
