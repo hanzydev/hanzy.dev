@@ -16,7 +16,7 @@
                     border="~ indigo-900"
                     h40
                     wfull
-                    cursor-pointer
+                    cursor-none="!"
                     rounded-lg
                     bg-primary
                     p4

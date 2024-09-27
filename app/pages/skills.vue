@@ -17,7 +17,7 @@
                     h36
                     wfull
                     flex="~ col items-center justify-center"
-                    cursor-pointer
+                    cursor-none="!"
                     overflow-hidden
                     border="~ indigo-900"
                     rounded-lg

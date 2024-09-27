@@ -36,6 +36,7 @@
                     :icon="item.icon"
                     :class="$route.path === item.href && 'bg-secondary'"
                     gap2
+                    cursor-none="!"
                 >
                     <span>{{ item.name }}</span>
                 </Button>
@@ -65,6 +66,7 @@
                             index === 0 && 'mt4',
                         ]"
                         gap2
+                        cursor-none="!"
                     >
                         <span>{{ item.name }}</span>
                     </Button>

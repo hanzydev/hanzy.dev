@@ -11,7 +11,6 @@
                 'bg-indigo-600 text-white': variant === 'accent',
                 'bg-primary hover:bg-secondary': variant === 'primary',
                 'bg-secondary hover:bg-primary': variant === 'secondary',
-                'cursor-not-allowed opacity-50': $attrs.disabled,
                 'align-left justify-start text-left': alignment === 'left',
                 'align-center justify-center text-center':
                     alignment === 'center',

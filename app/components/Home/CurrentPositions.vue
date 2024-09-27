@@ -10,7 +10,7 @@
                 :href="position.link"
                 target="_blank"
                 border="~ indigo-900"
-                cursor-pointer
+                cursor-none="!"
                 rounded-lg
                 bg-primary
                 p4

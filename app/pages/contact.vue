@@ -24,7 +24,7 @@
                     flex="~ items-center gap4"
                     h24
                     wfull
-                    cursor-pointer
+                    cursor-none="!"
                     rounded-lg
                     bg-primary
                     p="y-4 x-6"

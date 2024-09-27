@@ -24,7 +24,7 @@
         <Meta property="og:url" content="https://hanzy.dev" />
     </Head>
 
-    <div flex="~ col justify-between" hfull min-hscreen>
+    <div flex="~ col justify-between" hfull min-hscreen cursor-none="!">
         <NuxtLayout>
             <NuxtPage />
         </NuxtLayout>
