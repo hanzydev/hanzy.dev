@@ -12,6 +12,7 @@
                 transition-colors
                 duration-300
                 hover:text-white
+                cursor-none="!"
                 rel="license"
                 href="http://creativecommons.org/licenses/by-nc-nd/4.0/"
                 target="_blank"
